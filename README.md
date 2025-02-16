@@ -47,6 +47,10 @@
 </details>
 
 ![](https://leetcard.jacoblin.cool/jick155?theme=unicorn)
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
 <p>Connect With Me</p>
 
 <a href="https://www.cake.me/s--4pKu7Tk3JfSRdDwJQt6yVg--/jick"><img src="/img/cake.svg" alt="Cake"/></a>
