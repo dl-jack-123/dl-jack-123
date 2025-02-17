@@ -31,12 +31,14 @@
 ```
 
 ## Profile
+![visitor badge](https://visitor-badge.laobi.icu/badge?page_id=dl-jack-123.dl-jack-123&left_color=red&right_color=green&left_text=Hello%20Visitors)
+
 
  Property       | Data                                                                                                                                                                                                                                                                                                                                             
 ----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- Language / IDE | [![Python Badge](https://img.shields.io/badge/-PyCharm-3776AB?style=flat&logo=Python&logoColor=white)]()                                                                                                                                                                                                                                         
- Database       | [![MongoDB Badge](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=MongoDB&logoColor=white)]() [![SQL Server Badge](https://img.shields.io/badge/-SQL%20Server-CC2927?style=flat&logo=microsoftsqlserver&logoColor=white)]() [![SQLite Badge](https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white)]() 
- CI / CD        | [![Github Actions Badge](https://img.shields.io/badge/-Github%20Actions-2088FF?style=flat&logo=Github-Actions&logoColor=white)]()                                                                                                                                                                                                                
+ Language / IDE | [![Python Badge](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=Python&logoColor=white)]() [![Python Badge](https://img.shields.io/badge/-Jupyter-F37626?style=flat&logo=Jupyter&logoColor=white)]() [![Python Badge](https://img.shields.io/badge/-PyCharm-3776AB?style=flat&logo=PyCharm&logoColor=white)]() [![Python Badge](https://img.shields.io/badge/-Anaconda-44A833?style=flat&logo=Anaconda&logoColor=white)]() [![Python Badge](https://img.shields.io/badge/-Spyder-FFD43B?style=flat&logo=Spyder-IDE&logoColor=white)]() [![Python Badge](https://img.shields.io/badge/-Google%20Colab-F9AB00?style=flat&logo=Google-Colab&logoColor=white)]()                                                                                                                                                                                                                                       
+ Database       | [![MongoDB Badge](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=MongoDB&logoColor=white)]() [![SQL Server Badge](https://img.shields.io/badge/-SQL%20Server-CC2927?style=flat&logo=microsoftsqlserver&logoColor=white)]() [![SQLite Badge](https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white)]() [![MySQL Badge](https://img.shields.io/badge/-MySQL-4479A1?style=flat&logo=MySQL&logoColor=white)]() [![PostgreSQL Badge](https://img.shields.io/badge/-PostgreSQL-336791?style=flat&logo=PostgreSQL&logoColor=white)]()
+ CI / CD        | [![Github Actions Badge](https://img.shields.io/badge/-Github%20Actions-2088FF?style=flat&logo=Github-Actions&logoColor=white)]() [![Docker Badge](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=Docker&logoColor=white)]() [![Kubernetes Badge](https://img.shields.io/badge/-Kubernetes-326CE5?style=flat&logo=Kubernetes&logoColor=white)]() [![Git Badge](https://img.shields.io/badge/-Git-F05032?style=flat&logo=Git&logoColor=white)]() [![Git Badge](https://img.shields.io/badge/-GitLab-FCA121?style=flat&logo=GitLab&logoColor=white)]() 
 
 <!-- Greedy Snake: https://github.com/marketplace/actions/generate-snake-game-from-github-contribution-grid -->
 <p align="center">
@@ -82,6 +84,8 @@
 ![](https://leetcard.jacoblin.cool/jick155?theme=unicorn)
 
 [//]: # (https://github.com/anmol098/waka-readme-stats?tab=readme-ov-file)
+
+**🎪 My WakeTime stats** 
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-0%20secs-blue)
 
