@@ -161,44 +161,42 @@ JavaScript               1 repo              ██░░░░░░░░░�
 
 <a href="https://www.cake.me/s--4pKu7Tk3JfSRdDwJQt6yVg--/jick"><img src="/img/cake.svg" alt="Cake"/></a>
 
-[//]: # ()
 
-[//]: # (<br>)
 
-[//]: # (<!-- Open-Source Projects -->)
+<br>
 
-[//]: # (<details open>)
+<!-- Open-Source Projects -->
 
-[//]: # (<summary> 🖥️ Open-Source Projects </summary>)
+<details open>
 
-[//]: # (<br>)
+<summary> 🖥️ Open-Source Projects </summary>
 
-[//]: # ()
+<br>
 
-[//]: # (<table width='1000' align="center">)
 
-[//]: # (<tr> <th> Machine Learning </th> </tr>)
 
-[//]: # (<td>)
+<table width='1000' align="center">
 
-[//]: # ()
+<tr> <th> Machine Learning </th> </tr>
 
-[//]: # (<!-- Machine Learning -->)
+<td>
 
-[//]: # (| <div style='width: 230px'> Title </div> | <div style='width: 80px'> Clone </div> | <div style='width: 300px'> Technologies </div> |)
 
-[//]: # (|--|--|--|)
 
-[//]: # (| [LCII-Rec-Model]&#40;https://github.com/Junwu0615/LCII-Rec-Model&#41; | <img alt="Clone" src="https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count_total&url=https://gist.githubusercontent.com/Junwu0615/7f654406c51d568d31d565347f22d609/raw/LCII-Rec-Model_clone.json&logo=github"> | ![TensorFlow]&#40;https://img.shields.io/badge/TensorFlow-FF6F00.svg?logo=tensorflow&logoColor=white&#41; ![Python]&#40;https://img.shields.io/badge/Python-3776AB.svg?logo=python&logoColor=white&#41; |)
+<!-- Machine Learning -->
 
-[//]: # (| [NVDA-Price-Stock-Prediction]&#40;https://github.com/Junwu0615/NVDA-Price-Stock-Prediction&#41; |  <img alt="Clone" src="https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count_total&url=https://gist.githubusercontent.com/Junwu0615/05f5b34eedbee0ef7d196fdb42ee61f6/raw/NVDA-Price-Stock-Prediction_clone.json&logo=github"> | ![TensorFlow]&#40;https://img.shields.io/badge/TensorFlow-FF6F00.svg?logo=tensorflow&logoColor=white&#41; ![Keras]&#40;https://img.shields.io/badge/Keras-D00000.svg?logo=keras&logoColor=white&#41; ![Python]&#40;https://img.shields.io/badge/Python-3776AB.svg?logo=python&logoColor=white&#41; |)
+| <div style='width: 230px'> Title </div> | <div style='width: 80px'> Clone </div> | <div style='width: 300px'> Technologies </div> |
+|-----------------------------------------|--|--|
+| 角色扮演頻道(AI-Role talk)                    |  |  |
+| 時間預約小幫手                                 |  |  |
+| LLM + RAG                               |  |  |
 
-[//]: # ()
 
-[//]: # (</td> </table>)
 
-[//]: # ()
+</td> </table>
 
-[//]: # (<br>)
 
-[//]: # (</details>)
+
+<br>
+
+</details>
