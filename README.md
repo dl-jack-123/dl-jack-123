@@ -2,9 +2,12 @@
 
 <!-- Font Name: Larry 3D, Merlin1, Ogre, Calvin S, Cyberlarge, Isometric3, Slant, Lean, Kban,  JS Cursive -->
 
-<img src="https://capsule-render.vercel.app/api?type=wave&color=gradient&height=300&section=header&text=DL.Chiu%20Readme&fontSize=90&animation=twinkling" />
-
-[//]: # (https://patorjk.com/software/taag/#p=display&f=Alpha&t=DL%20CHIU)
+<!-- 前提示參考 -->
+<!-- 參考 https://github.com/kyechan99/capsule-render/tree/master -->
+<!-- 參考 https://capsule-render.vercel.app/ -->
+<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&text=DL.Chiu&desc=A%20great%20product%20starts%20with%20a%20single%20line%20of%20code-but%20it's%20the%20deployment%20that%20makes%20it%20real.&descAlignY=40&fontAlignY=19&reversal=true&textBg=false&animation=twinkling" />
+<!-- 特殊文字參考 -->
+<!-- 參考 https://patorjk.com/software/taag/#p=display&f=Alpha&t=DL%20CHIU -->
 
 
 ## Profile
