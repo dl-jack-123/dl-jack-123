@@ -102,7 +102,7 @@
             <tr>
                 <td align="center" style="border: none;">
                     <a href="https://icons8.com/icons/set/sql-server">
-                        <img alt="SQL Server" width="50px" src="https://raw.githubusercontent.com/Junwu0615/Junwu0615/main/icon/sql-server.png"/>
+                        <img alt="SQL Server" width="50px" src="https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/icon/sql-server.png"/>
                     </a>
                     <br> SQL Server
                 </td>
@@ -120,7 +120,7 @@
                 </td>
                 <td align="center" style="border: none;">
                     <a href="https://icons8.com/icons/set/sqlite">
-                        <img alt="SQLite" width="50px" src="https://raw.githubusercontent.com/Junwu0615/Junwu0615/main/icon/sqlite.png"/>
+                        <img alt="SQLite" width="50px" src="https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/icon/sqlite.png"/>
                     </a>
                     <br> SQLite
                 </td>
@@ -174,13 +174,13 @@
                 </td>
                 <td align="center" style="border: none;">
                     <a href="https://pandas.pydata.org/">
-                        <img alt="Pandas" width="80" height="50" src="https://raw.githubusercontent.com/Junwu0615/Junwu0615/main/icon/pandas.svg"/>
+                        <img alt="Pandas" width="80" height="50" src="https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/icon/pandas.svg"/>
                     </a>
                     <br> Pandas
                 </td>
                 <td align="center" style="border: none;">
                     <a href="#">
-                        <img alt="PyQt5" width="80" height="50" src="https://skillicons.dev/icons?i=qt)"/>
+                        <img alt="PyQt5" width="80" height="50" src="https://raw.githubusercontent.com/tandpfun/skill-icons/refs/heads/main/icons/QT-Dark.svg"/>
                     </a>
                     <br> PyQt5
                 </td>
@@ -228,15 +228,15 @@
             <tr>
                 <td align="center" style="border: none;">
                     <a href="#">
-                        <img alt="Capital" width="40" height="50" src="#"/>
+                        <img alt="Capital" width="40" height="50" src="https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/icon/capital.png"/>
                     </a>
-                    <br> Capital
+                    <br> 群益
                 </td>
                 <td align="center" style="border: none;">
                     <a href="#">
-                        <img alt="Shioaji" width="80" height="50" src="#"/>
+                        <img alt="Shioaji" width="80" height="50" src="https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/icon/shioaji.png"/>
                     </a>
-                    <br> Shioaji
+                    <br> 永豐
                 </td>
             </tr>
         </tbody>
