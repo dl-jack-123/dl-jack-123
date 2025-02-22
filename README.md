@@ -9,16 +9,285 @@
 <!-- 特殊文字參考 -->
 <!-- 參考 https://patorjk.com/software/taag/#p=display&f=Alpha&t=DL%20CHIU -->
 
-
 ## Profile
+
 ![visitor badge](https://visitor-badge.laobi.icu/badge?page_id=dl-jack-123.dl-jack-123&left_color=red&right_color=green&left_text=Hello%20Visitors)
 
+<!-- Languages -->
+<div align="center">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="10" align="center"> Languages </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center" style="border: none;">
+                    <a href="https://www.python.org/">
+                        <img alt="Python" width="50" height="50" src="https://techstack-generator.vercel.app/python-icon.svg"/>
+                    </a>
+                    <br> Python
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://markdown.tw/">
+                        <img alt="Markdown" width="45" height="50" src="https://skillicons.dev/icons?i=md"/>
+                    </a>
+                    <br> Markdown
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Web skill -->
+<div align="center">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="10" align="center"> Web skill </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center" style="border: none;">
+                    <a href="https://www.djangoproject.com/" style="color: white;">
+                        <img alt="Django" width="40" height="50" src="https://techstack-generator.vercel.app/django-icon.svg"/>
+                    </a>
+                    <br> Django
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML">
+                        <img alt="HTML" width="40" height="50" src="https://skillicons.dev/icons?i=html"/>
+                    </a>
+                    <br> HTML
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS">
+                        <img alt="CSS" width="40" height="50" src="https://skillicons.dev/icons?i=css"/>
+                    </a>
+                    <br> CSS
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript" style="color: white;">
+                        <img alt="JavaScript" width="40" height="50" src="https://techstack-generator.vercel.app/js-icon.svg"/>
+                    </a>
+                    <br> JavaScript
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://flask.palletsprojects.com/">
+                        <img alt="Flask" width="40" height="50" src="https://skillicons.dev/icons?i=flask"/>
+                    </a>
+                    <br> Flask
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://fastapi.tiangolo.com/">
+                        <img alt="FastAPI" width="40" height="50" src="https://skillicons.dev/icons?i=fastapi"/>
+                    </a>
+                    <br> FastAPI
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
- Property       | Data                                                                                                                                                                                                                                                                                                                                             
-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- Language / IDE | [![Python Badge](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=Python&logoColor=white)]() [![Python Badge](https://img.shields.io/badge/-Jupyter-F37626?style=flat&logo=Jupyter&logoColor=white)]() [![Python Badge](https://img.shields.io/badge/-PyCharm-3776AB?style=flat&logo=PyCharm&logoColor=white)]() [![Python Badge](https://img.shields.io/badge/-Anaconda-44A833?style=flat&logo=Anaconda&logoColor=white)]() [![Python Badge](https://img.shields.io/badge/-Spyder-FFD43B?style=flat&logo=Spyder-IDE&logoColor=white)]() [![Python Badge](https://img.shields.io/badge/-Google%20Colab-F9AB00?style=flat&logo=Google-Colab&logoColor=white)]()                                                                                                                                                                                                                                       
- Database       | [![MongoDB Badge](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=MongoDB&logoColor=white)]() [![SQL Server Badge](https://img.shields.io/badge/-SQL%20Server-CC2927?style=flat&logo=microsoftsqlserver&logoColor=white)]() [![SQLite Badge](https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white)]() [![MySQL Badge](https://img.shields.io/badge/-MySQL-4479A1?style=flat&logo=MySQL&logoColor=white)]() [![PostgreSQL Badge](https://img.shields.io/badge/-PostgreSQL-336791?style=flat&logo=PostgreSQL&logoColor=white)]()
- CI / CD        | [![Github Actions Badge](https://img.shields.io/badge/-Github%20Actions-2088FF?style=flat&logo=Github-Actions&logoColor=white)]() [![Docker Badge](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=Docker&logoColor=white)]() [![Kubernetes Badge](https://img.shields.io/badge/-Kubernetes-326CE5?style=flat&logo=Kubernetes&logoColor=white)]() [![Git Badge](https://img.shields.io/badge/-Git-F05032?style=flat&logo=Git&logoColor=white)]() [![Git Badge](https://img.shields.io/badge/-GitLab-FCA121?style=flat&logo=GitLab&logoColor=white)]() 
+<!-- Database -->
+<div align="center">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="10" align="center"> Database </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center" style="border: none;">
+                    <a href="https://icons8.com/icons/set/sql-server">
+                        <img alt="SQL Server" width="50px" src="https://raw.githubusercontent.com/Junwu0615/Junwu0615/main/icon/sql-server.png"/>
+                    </a>
+                    <br> SQL Server
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://www.postgresql.org/">
+                        <img alt="PostgreSQL" width="50" height="50" src="https://skillicons.dev/icons?i=postgresql"/>
+                    </a>
+                    <br> PostgreSQL
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://www.mysql.com/">
+                        <img alt="MySQL" width="50" height="50" src="https://techstack-generator.vercel.app/mysql-icon.svg"/>
+                    </a>
+                    <br> MySQL
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://icons8.com/icons/set/sqlite">
+                        <img alt="SQLite" width="50px" src="https://raw.githubusercontent.com/Junwu0615/Junwu0615/main/icon/sqlite.png"/>
+                    </a>
+                    <br> SQLite
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Deploy & Cloud -->
+<div align="center">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="10" align="center"> Deploy & Cloud </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center" style="border: none;">
+                    <a href="https://www.docker.com/">
+                        <img alt="Docker" width="50" height="50" src="https://techstack-generator.vercel.app/docker-icon.svg"/>
+                    </a>
+                    <br> Docker
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://kubernetes.io/" style="color: white;">
+                        <img alt="Kubernetes" width="40" height="50" src="https://techstack-generator.vercel.app/kubernetes-icon.svg"/>
+                    </a>
+                    <br> Kubernetes
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Skills -->
+<div align="center">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="10" align="center"> Skills </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center" style="border: none;">
+                    <a href="https://numpy.org/">
+                        <img alt="NumPy" width="40" height="50" src="https://cdn.worldvectorlogo.com/logos/numpy-1.svg"/>
+                    </a>
+                    <br> NumPy
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://pandas.pydata.org/">
+                        <img alt="Pandas" width="80" height="50" src="https://raw.githubusercontent.com/Junwu0615/Junwu0615/main/icon/pandas.svg"/>
+                    </a>
+                    <br> Pandas
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="#">
+                        <img alt="PyQt5" width="80" height="50" src="https://skillicons.dev/icons?i=qt)"/>
+                    </a>
+                    <br> PyQt5
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="border: none;">
+                    <a href="https://github.com/features/actions">
+                        <img alt="Github Actions" width="40" height="50" src="https://skillicons.dev/icons?i=githubactions"/>
+                    </a>
+                    <br> Github Actions
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://gist.github.com/">
+                        <img alt="Github Gist" width="50" height="50" src="https://k9982874.gallerycdn.vsassets.io/extensions/k9982874/github-gist-explorer/0.2.3/1638842316475/Microsoft.VisualStudio.Services.Icons.Default"/>
+                    </a>
+                    <br> Github Gist
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://airflow.apache.org/">
+                        <img alt="Apache Airflow" width="40" height="40" src="https://airflow.apache.org/docs/apache-airflow/1.10.15/_images/pin_large.png"/>
+                    </a>
+                    <br> Apache Airflow
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://streamlit.io/">
+                        <img alt="Streamlit" width="40" height="40" src="https://raw.githubusercontent.com/rlew631/rlew631/5fcb1cee69c8034bfa2b98aad94b584fcff8d84f/streamlit_red.svg"/>
+                    </a>
+                    <br> Streamlit
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- TradeBot -->
+<div align="center">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="10" align="center"> TradeBot </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center" style="border: none;">
+                    <a href="#">
+                        <img alt="Capital" width="40" height="50" src="#"/>
+                    </a>
+                    <br> Capital
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="#">
+                        <img alt="Shioaji" width="80" height="50" src="#"/>
+                    </a>
+                    <br> Shioaji
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Studying -->
+<div align="center">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="10" align="center"> Studying </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center" style="border: none;">
+                    <a href="https://reactjs.org/" style="color: white;">
+                        <img alt="React" width="40" height="50" src="https://techstack-generator.vercel.app/react-icon.svg"/>
+                    </a>
+                    <br> React
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://grafana.com/" style="color: white;">
+                        <img alt="Grafana" width="40" height="50" src="https://skillicons.dev/icons?i=grafana"/>
+                    </a>
+                    <br> Grafana
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://azure.microsoft.com/zh-tw" style="color: white;">
+                        <img alt="Azure" width="40" height="50" src="https://skillicons.dev/icons?i=azure"/>
+                    </a>
+                    <br> Azure
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://cloud.google.com" style="color: white;">
+                        <img alt="GCP" width="40" height="50" src="https://skillicons.dev/icons?i=gcp"/>
+                    </a>
+                    <br> GCP
+                </td>
+                <td align="center" style="border: none;">
+                    <a href="https://aws.amazon.com" style="color: white;">
+                        <img alt="AWS" width="40" height="50" src="https://techstack-generator.vercel.app/aws-icon.svg"/>
+                    </a>
+                    <br> AWS
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 
 <!-- Greedy Snake: https://github.com/marketplace/actions/generate-snake-game-from-github-contribution-grid -->
 <p align="center">
@@ -29,9 +298,6 @@
     </picture>
 </p>
 <br>
-
-<!-- My GitHub Terminal -->
-[//]: # (https://github.com/x0rzavi/github-readme-terminal)
 
 <!-- My GitHub Stat -->
 <details open>
@@ -65,7 +331,7 @@
 
 [//]: # (https://github.com/anmol098/waka-readme-stats?tab=readme-ov-file)
 
-**🎪 My WakeTime stats** 
+**🎪 My WakeTime stats**
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-2%20hrs%2049%20mins-blue)
 
@@ -73,19 +339,19 @@
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-320.3%20thousand%20lines%20of%20code-blue)
 
-**🐱 My GitHub Data** 
+**🐱 My GitHub Data**
 
-> 📦 146.8 kB Used in GitHub's Storage 
- > 
+> 📦 146.8 kB Used in GitHub's Storage
+>
 > 🏆 48 Contributions in the Year 2025
- > 
+>
 > 🚫 Not Opted to Hire
- > 
-> 📜 6 Public Repositories 
- > 
-> 🔑 12 Private Repositories 
- > 
-**I'm a Night 🦉** 
+>
+> 📜 6 Public Repositories
+>
+> 🔑 12 Private Repositories
+>
+**I'm a Night 🦉**
 
 ```text
 🌞 Morning                301 commits         █████░░░░░░░░░░░░░░░░░░░░   21.78 % 
@@ -93,7 +359,8 @@
 🌃 Evening                808 commits         ███████████████░░░░░░░░░░   58.47 % 
 🌙 Night                  95 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.87 % 
 ```
-📅 **I'm Most Productive on Monday** 
+
+📅 **I'm Most Productive on Monday**
 
 ```text
 Monday                   278 commits         █████░░░░░░░░░░░░░░░░░░░░   20.12 % 
@@ -105,8 +372,7 @@ Saturday                 179 commits         ███░░░░░░░░�
 Sunday                   225 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.28 % 
 ```
 
-
-📊 **This Week I Spent My Time On** 
+📊 **This Week I Spent My Time On**
 
 ```text
 🕑︎ Time Zone: Asia/Taipei
@@ -125,7 +391,7 @@ PyCharm                  2 hrs 53 mins       ███████████�
 Windows                  2 hrs 53 mins       █████████████████████████   100.00 % 
 ```
 
-**I Mostly Code in Python** 
+**I Mostly Code in Python**
 
 ```text
 Python                   12 repos            █████████████████████░░░░   85.71 % 
@@ -133,10 +399,7 @@ SCSS                     1 repo              ██░░░░░░░░░�
 JavaScript               1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
 ```
 
-
-
-
- Last Updated on 19/02/2025 00:02:50 UTC
+Last Updated on 19/02/2025 00:02:50 UTC
 <!--END_SECTION:waka-->
 
 <p>Connect With Me</p>
@@ -168,12 +431,10 @@ JavaScript               1 repo              ██░░░░░░░░░�
 <!-- Machine Learning -->
 
 | <div style='width: 230px'> Title </div> | <div style='width: 80px'> Clone </div> | <div style='width: 300px'> Technologies </div> |
-|-----------------------------------------|--|--|
-| 角色扮演頻道(AI-Role talk)                    |  |  |
-| 時間預約小幫手                                 |  |  |
-| LLM + RAG                               |  |  |
-
-
+|-----------------------------------------|----------------------------------------|------------------------------------------------|
+| 角色扮演頻道(AI-Role talk)                    |                                        |                                                |
+| 時間預約小幫手                                 |                                        |                                                |
+| LLM + RAG                               |                                        |                                                |
 
 </td> </table>
 
