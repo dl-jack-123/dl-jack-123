@@ -12,49 +12,42 @@
 ## Profile
 
 ![visitor badge](https://visitor-badge.laobi.icu/badge?page_id=dl-jack-123.dl-jack-123&left_color=red&right_color=green&left_text=Hello%20Visitors)
-
-<div align="center">
-    <table>
-        <tr>
-            <!-- 左側圖片 -->
-            <td align="center" style="border: none;">
-                <img src="https://user-images.githubusercontent.com/74038190/213866269-5d00981c-7c98-46d7-8a8e-16f462f15227.gif" width="200" />
-            </td>
-            <!-- 中間語言表格 -->
-            <td align="center" style="border: none;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="10" align="center"> Languages </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td align="center" style="border: none;">
-                                <a href="https://www.python.org/">
-                                    <img alt="Python" width="50" height="50" src="https://techstack-generator.vercel.app/python-icon.svg"/>
-                                </a>
-                                <br> Python
-                            </td>
-                            <td align="center" style="border: none;">
-                                <a href="https://markdown.tw/">
-                                    <img alt="Markdown" width="45" height="50" src="https://skillicons.dev/icons?i=md"/>
-                                </a>
-                                <br> Markdown
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
-            <!-- 右側圖片 -->
-            <td align="center" style="border: none;">
-                <img src="https://user-images.githubusercontent.com/74038190/213866269-5d00981c-7c98-46d7-8a8e-16f462f15227.gif" width="200" />
-            </td>
-        </tr>
-    </table>
+<div align="center" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <!-- 左側圖片 -->
+    <div>
+        <img src="https://user-images.githubusercontent.com/74038190/213866269-5d00981c-7c98-46d7-8a8e-16f462f15227.gif" width="200" />
+    </div>
+    <!-- 中間語言表格 -->
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="10" align="center"> Languages </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center" style="border: none;">
+                        <a href="https://www.python.org/">
+                            <img alt="Python" width="50" height="50" src="https://techstack-generator.vercel.app/python-icon.svg"/>
+                        </a>
+                        <br> Python
+                    </td>
+                    <td align="center" style="border: none;">
+                        <a href="https://markdown.tw/">
+                            <img alt="Markdown" width="45" height="50" src="https://skillicons.dev/icons?i=md"/>
+                        </a>
+                        <br> Markdown
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- 右側圖片 -->
+    <div>
+        <img src="https://user-images.githubusercontent.com/74038190/213866269-5d00981c-7c98-46d7-8a8e-16f462f15227.gif" width="200" />
+    </div>
 </div>
-
-<img src="https://user-images.githubusercontent.com/74038190/213866269-5d00981c-7c98-46d7-8a8e-16f462f15227.gif" width="200" />
 
 <!-- Languages -->
 <div align="center">
