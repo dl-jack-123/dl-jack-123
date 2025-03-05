@@ -433,19 +433,19 @@
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-320.9%20thousand%20lines%20of%20code-blue)
 
-**🐱 My GitHub Data** 
+**🐱 My GitHub Data**
 
-> 📦 148.0 kB Used in GitHub's Storage 
- > 
+> 📦 148.0 kB Used in GitHub's Storage
+>
 > 🏆 63 Contributions in the Year 2025
- > 
+>
 > 🚫 Not Opted to Hire
- > 
-> 📜 8 Public Repositories 
- > 
-> 🔑 12 Private Repositories 
- > 
-**I'm a Night 🦉** 
+>
+> 📜 8 Public Repositories
+>
+> 🔑 12 Private Repositories
+>
+**I'm a Night 🦉**
 
 ```text
 🌞 Morning                302 commits         █████░░░░░░░░░░░░░░░░░░░░   21.59 % 
@@ -453,7 +453,8 @@
 🌃 Evening                815 commits         ███████████████░░░░░░░░░░   58.26 % 
 🌙 Night                  95 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.79 % 
 ```
-📅 **I'm Most Productive on Monday** 
+
+📅 **I'm Most Productive on Monday**
 
 ```text
 Monday                   280 commits         █████░░░░░░░░░░░░░░░░░░░░   20.01 % 
@@ -465,8 +466,7 @@ Saturday                 187 commits         ███░░░░░░░░�
 Sunday                   226 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.15 % 
 ```
 
-
-📊 **This Week I Spent My Time On** 
+📊 **This Week I Spent My Time On**
 
 ```text
 🕑︎ Time Zone: Asia/Taipei
@@ -485,7 +485,7 @@ PyCharm                  16 hrs 41 mins      ███████████�
 Windows                  16 hrs 41 mins      █████████████████████████   100.00 % 
 ```
 
-**I Mostly Code in Python** 
+**I Mostly Code in Python**
 
 ```text
 Python                   13 repos            ██████████████████████░░░   86.67 % 
@@ -493,10 +493,7 @@ SCSS                     1 repo              ██░░░░░░░░░�
 JavaScript               1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   06.67 % 
 ```
 
-
-
-
- Last Updated on 05/03/2025 00:03:04 UTC
+Last Updated on 05/03/2025 00:03:04 UTC
 <!--END_SECTION:waka-->
 
 <p>Connect With Me</p>
@@ -527,11 +524,11 @@ JavaScript               1 repo              ██░░░░░░░░░�
 
 <!-- Machine Learning -->
 
-| <div style='width: 230px'> Title </div>                                                  | <div style='width: 80px'> Clone </div> | <div style='width: 300px'> Technologies </div>                                                                                                                                                                                                                                                                                                                                                            |
-|------------------------------------------------------------------------------------------|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [角色扮演頻道(AI-Role talk)](https://github.com/dl-jack-123/AIRole_TgBot)                      |                                        | <img alt="Telegram" width="40" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1200px-Telegram_logo.svg.png"/><img alt="Python" width="50" height="50" src="https://techstack-generator.vercel.app/python-icon.svg"/> <img alt="Google Gemini" width="75" height="65" src="https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/icon/Gemini.gif"/> |
-| 時間預約小幫手                                                                                  |                                        |                                                                                                                                                                                                                                                                                                                                                                                                           |
-| LLM + RAG                                                                                |                                        |                                                                                                                                                                                                                                                                                                                                                                                                           |
+| <div style='width: 230px'> Title </div>                             | <div style='width: 80px'> Clone </div> | <div style='width: 300px'> Technologies </div>                                                                                                                                                                                                                                                                                                                                                            |
+|---------------------------------------------------------------------|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [角色扮演頻道(AI-Role talk)](https://github.com/dl-jack-123/AIRole_TgBot) |                                        | <img alt="Telegram" width="40" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1200px-Telegram_logo.svg.png"/><img alt="Python" width="50" height="50" src="https://techstack-generator.vercel.app/python-icon.svg"/> <img alt="Google Gemini" width="75" height="65" src="https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/icon/Gemini.gif"/> |
+| 時間預約小幫手                                                             |                                        |                                                                                                                                                                                                                                                                                                                                                                                                           |
+| LLM + RAG                                           |                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 </td> </table>
 
