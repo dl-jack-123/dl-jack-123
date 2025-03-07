@@ -383,6 +383,78 @@
     </tr>
 </table>
 
+
+<!-- Open-Source Projects -->
+
+<details open>
+
+<summary> 🖥️ Open-Source Projects </summary>
+
+<br>
+
+
+
+<table width='1000' align="center">
+
+<tr> <th> Machine Learning </th> </tr>
+
+<td>
+
+
+
+<!-- Machine Learning -->
+
+| <div style='width: 230px'> Title </div>                             | <div style='width: 80px'> Clone </div> | <div style='width: 300px'> Technologies </div>                                                                                                                                                                                                                                                                                                                                                            |
+|---------------------------------------------------------------------|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [角色扮演頻道(AI-Role talk)](https://github.com/dl-jack-123/AIRole_TgBot) |                                        | <img alt="Telegram" width="40" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1200px-Telegram_logo.svg.png"/><img alt="Python" width="50" height="50" src="https://techstack-generator.vercel.app/python-icon.svg"/> <img alt="Google Gemini" width="75" height="65" src="https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/icon/Gemini.gif"/> |
+| 時間預約小幫手(客服聊天機器人)                                                    |                                        |                                                                                                                                                                                                                                                                                                                                                                                                           |
+| LLM + RAG Learning                                                  |                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+</td> </table>
+
+
+
+<br>
+
+<table width='1000' align="center">
+
+<tr> <th> Backend </th> </tr>
+
+<td>
+
+
+
+<!-- Backend -->
+
+| <div style='width: 230px'> Title </div> | <div style='width: 80px'> Clone </div> | <div style='width: 300px'> Technologies </div>                                                                                                                                                                                                                                                                                                                                                            |
+|-----------------------------------------|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Airflow Service                         |                                        | |
+| FastAPI-User                            |                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Crawler-Kubernetes(K8S)                             |                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Deploy-AWS                              |                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Deploy-GCP                              |                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Deploy-Azure                            |                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+</td> </table>
+<br>
+
+<table width='1000' align="center">
+
+<tr> <th> Other </th> </tr>
+
+<td>
+
+<!-- Other -->
+
+| <div style='width: 230px'> Title </div> | <div style='width: 80px'> Clone </div> | <div style='width: 300px'> Technologies </div>                                                                                                                                                                                                                                                                                                                                                            |
+|-----------------------------------------|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub-Personal-Page                    |                                        | |
+| Note(學習筆記)                              |                                        |                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+</td> </table>
+</details>
+
+
 <!-- Greedy Snake: https://github.com/marketplace/actions/generate-snake-game-from-github-contribution-grid -->
 <p align="center">
     <picture>
@@ -504,36 +576,3 @@ Last Updated on 05/03/2025 00:03:04 UTC
 
 <br>
 
-<!-- Open-Source Projects -->
-
-<details open>
-
-<summary> 🖥️ Open-Source Projects </summary>
-
-<br>
-
-
-
-<table width='1000' align="center">
-
-<tr> <th> Machine Learning </th> </tr>
-
-<td>
-
-
-
-<!-- Machine Learning -->
-
-| <div style='width: 230px'> Title </div>                             | <div style='width: 80px'> Clone </div> | <div style='width: 300px'> Technologies </div>                                                                                                                                                                                                                                                                                                                                                            |
-|---------------------------------------------------------------------|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [角色扮演頻道(AI-Role talk)](https://github.com/dl-jack-123/AIRole_TgBot) |                                        | <img alt="Telegram" width="40" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1200px-Telegram_logo.svg.png"/><img alt="Python" width="50" height="50" src="https://techstack-generator.vercel.app/python-icon.svg"/> <img alt="Google Gemini" width="75" height="65" src="https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/icon/Gemini.gif"/> |
-| 時間預約小幫手                                                             |                                        |                                                                                                                                                                                                                                                                                                                                                                                                           |
-| LLM + RAG                                           |                                                                                                                                                                                                                                                                                                                                                                                                           |
-
-</td> </table>
-
-
-
-<br>
-
-</details>
