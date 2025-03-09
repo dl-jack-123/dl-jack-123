@@ -35,5 +35,5 @@ latest['uniques'] = sum(map(lambda x: int(x['uniques']), latest['clones']))
 latest['count_total'] = latest['count_past_to_last_2_weeks_ago'] + latest['count']
 latest['uniques_total'] = latest['uniques_past_to_last_2_weeks_ago'] + latest['uniques']
 
-with open('How-To-Use-Clone-Shields_clone.json', 'w', encoding='utf-8') as fh:
+with open('clone.json', 'w', encoding='utf-8') as fh:
     json.dump(latest, fh, ensure_ascii=False, indent=4)
