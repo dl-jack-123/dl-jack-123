@@ -57,7 +57,7 @@ jobs:
       - name: update clone.json
         run: |
           curl https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/util/clone.py > clone.py
-          python3 clone.py ${{ github.repository }} ${{github.repository.id}}
+          python3 clone.py ${{ github.repository }} $GITHUB_REPOSITORY_ID
 
       - name: Update gist with latest count
         run: |
@@ -69,7 +69,7 @@ jobs:
             -d @post_clone.json https://api.github.com/gists/${{ steps.set_id.outputs.GIST }} > /dev/null 2>&1
 
           if [ ! -f .github/CLONE.md ]; then
-            shields="https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count_total&url="
+            shields="https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=$GITHUB_REPOSITORY_ID_count&url="
             url="https://gist.githubusercontent.com/${{ github.actor }}/${{ steps.set_id.outputs.GIST }}/raw/clone.json"
             repo="https://github.com/${{ github.repository }}.git"
             echo ''> .github/CLONE.md
