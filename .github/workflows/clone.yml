@@ -57,7 +57,7 @@ jobs:
       - name: update clone.json
         run: |
           curl https://raw.githubusercontent.com/dl-jack-123/dl-jack-123/main/util/clone.py > clone.py
-          python3 clone.py ${{ github.repository }} ${{vars.GITHUB_REPOSITORY_ID}}
+          python3 clone.py ${{ github.repository }} ${{github.repository.id}}
 
       - name: Update gist with latest count
         run: |

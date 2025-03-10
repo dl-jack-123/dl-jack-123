@@ -1,10 +1,15 @@
 import json, sys
 print(sys.argv[1], sys.argv[2])
 
+repository_id = sys.argv[2]
+
 with open('clone.json', 'r') as fh:
     now = json.load(fh)
 with open('clone_before.json', 'r') as fh:
     before = json.load(fh)
+with open('updated_clone.json', 'r') as fh:
+    updated = json.load(fh)
+
 
 latest = dict(before)
 if 'count_past_to_last_2_weeks_ago' not in latest.keys():
