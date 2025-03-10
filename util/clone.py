@@ -1,7 +1,7 @@
 import json, sys
-print(sys.argv[1], sys.argv[2])
+print(sys.argv[1])
 
-repository_id = sys.argv[2]
+repository_id = sys.argv[1]
 
 with open('clone.json', 'r') as fh:
     now = json.load(fh)
