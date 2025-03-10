@@ -1,4 +1,5 @@
-import json
+import json, sys
+print(sys.argv[1], sys.argv[2])
 
 with open('clone.json', 'r') as fh:
     now = json.load(fh)
