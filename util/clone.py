@@ -31,6 +31,10 @@ for i in updated['clones']:
 before[repository_id]['count'] = sum([x['count'] for x in before[repository_id]['clones']])
 before[repository_id]['uniques'] = sum([x['uniques'] for x in before[repository_id]['clones']])
 
+before.pop('count', None)
+before.pop('uniques', None)
+before.pop('clones', None)
+
 with open('clone.json', 'w', encoding='utf-8') as fh:
     json.dump(before, fh, ensure_ascii=False, indent=4)
 with open('clone_before.json', 'w', encoding='utf-8') as fh:
