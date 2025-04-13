@@ -414,9 +414,9 @@
 
 **🎪 My WakeTime stats**
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-107%20hrs%2041%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-111%20hrs%2056%20mins-blue)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-11-blue)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-8-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-323.6%20thousand%20lines%20of%20code-blue)
 
@@ -424,11 +424,11 @@
 
 > 📦 148.8 kB Used in GitHub's Storage 
  > 
-> 🏆 105 Contributions in the Year 2025
+> 🏆 106 Contributions in the Year 2025
  > 
 > 🚫 Not Opted to Hire
  > 
-> 📜 10 Public Repositories 
+> 📜 11 Public Repositories 
  > 
 > 🔑 12 Private Repositories 
  > 
@@ -459,17 +459,17 @@ Sunday                   233 commits         ████░░░░░░░�
 🕑︎ Time Zone: Asia/Taipei
 
 💬 Programming Languages: 
-Python                   18 hrs 59 mins      █████████████████████░░░░   85.65 % 
-HTTP Request             51 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.89 % 
-JSON                     33 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.53 % 
-HTML                     33 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.50 % 
-Text                     21 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.64 % 
+Python                   18 hrs 3 mins       ██████████████████████░░░   88.87 % 
+JSON                     33 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.76 % 
+HTML                     33 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.73 % 
+Text                     21 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.80 % 
+Markdown                 14 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.16 % 
 
 🔥 Editors: 
-PyCharm                  22 hrs 10 mins      █████████████████████████   100.00 % 
+PyCharm                  20 hrs 18 mins      █████████████████████████   100.00 % 
 
 💻 Operating System: 
-Windows                  22 hrs 10 mins      █████████████████████████   100.00 % 
+Windows                  20 hrs 18 mins      █████████████████████████   100.00 % 
 ```
 
 **I Mostly Code in Python** 
@@ -483,7 +483,7 @@ JavaScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 12/04/2025 00:02:41 UTC
+ Last Updated on 13/04/2025 00:26:26 UTC
 <!--END_SECTION:waka-->
 
 <p>Connect With Me</p>
