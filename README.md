@@ -343,11 +343,9 @@
 | <div style='width: 230px'> Title </div> | <div style='width: 80px'> Clone </div>                                                                                                                                                                                                                                                              | <div style='width: 300px'> Technologies </div> |
 |-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
 | Airflow Service                         | <a href='https://github.com/dl-jack-123/CAED.git'><img alt='GitHub Clones' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=$.id_916112310.count&url=https://gist.githubusercontent.com/dl-jack-123/d15f9ea54d5594a8d2e53ec511180646/raw/clone.json&logo=github'></a> |                                                |
-| FastAPI-User                            |                                                                                                                                                                                                                                                                                                     |
-| Crawler-Kubernetes(K8S)                 |                                                                                                                                                                                                                                                                                                     |
-| Deploy-AWS                              |                                                                                                                                                                                                                                                                                                     |
-| Deploy-GCP                              |                                                                                                                                                                                                                                                                                                     |
-| Deploy-Azure                            |                                                                                                                                                                                                                                                                                                     |
+| FastAPI-User                            |                                                                                                                                                                                                                                                                                                     |                                                |
+| [ETL(Airflow)](https://github.com/dl-jack-123/Airflow/tree/main)                            |                                                                                                                                                                                                                                                 | Python, Airflow, Celery, Postrges              |
+
 
 </td> </table>
 <br>
@@ -485,12 +483,6 @@ JavaScript               1 repo              █░░░░░░░░░░�
 
  Last Updated on 20/04/2025 00:03:07 UTC
 <!--END_SECTION:waka-->
-
-<p>Connect With Me</p>
-
-<a href="https://www.cake.me/s--4pKu7Tk3JfSRdDwJQt6yVg--/jick"><img src="/img/cake.svg" alt="Cake"/></a>
-
-
 
 <br>
 
