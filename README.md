@@ -412,9 +412,9 @@
 
 **🎪 My WakeTime stats**
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-193%20hrs%203%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-193%20hrs%2025%20mins-blue)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-1-blue)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-0-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-340.9%20thousand%20lines%20of%20code-blue)
 
@@ -457,15 +457,15 @@ Sunday                   236 commits         ████░░░░░░░�
 🕑︎ Time Zone: Asia/Taipei
 
 💬 Programming Languages: 
-Python                   17 hrs 27 mins      █████████████████████████   99.99 % 
+Python                   15 hrs 31 mins      █████████████████████████   99.98 % 
 Markdown                 0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 % 
 JSON                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
 
 🔥 Editors: 
-PyCharm                  17 hrs 27 mins      █████████████████████████   100.00 % 
+PyCharm                  15 hrs 31 mins      █████████████████████████   100.00 % 
 
 💻 Operating System: 
-Windows                  17 hrs 27 mins      █████████████████████████   100.00 % 
+Windows                  15 hrs 31 mins      █████████████████████████   100.00 % 
 ```
 
 **I Mostly Code in Python** 
@@ -480,7 +480,7 @@ JavaScript               1 repo              █░░░░░░░░░░�
 
 
 
- Last Updated on 12/06/2025 00:02:40 UTC
+ Last Updated on 13/06/2025 00:03:24 UTC
 <!--END_SECTION:waka-->
 
 <br>
