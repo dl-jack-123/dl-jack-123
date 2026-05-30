@@ -412,15 +412,17 @@
 
 **🎪 My WakeTime stats**
 <!--START_SECTION:waka-->
+![Code Time](http://img.shields.io/badge/Code%20Time-645%20hrs%2042%20mins-blue?style=flat)
+
 ![Profile Views](http://img.shields.io/badge/Profile%20Views-0-blue?style=flat)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-478.12%20thousand%20lines%20of%20code-blue?style=flat)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-478.13%20thousand%20lines%20of%20code-blue?style=flat)
 
 **🐱 My GitHub Data** 
 
-> 📦 234.7 kB Used in GitHub's Storage 
+> 📦 234.8 kB Used in GitHub's Storage 
  > 
-> 🏆 590 Contributions in the Year 2026
+> 🏆 594 Contributions in the Year 2026
  > 
 > 🚫 Not Opted to Hire
  > 
@@ -428,6 +430,46 @@
  > 
 > 🔑 16 Private Repositories 
  > 
+**I'm a Night 🦉** 
+
+```text
+🌞 Morning                2357 commits        █████░░░░░░░░░░░░░░░░░░░░   18.90 % 
+🌆 Daytime                1884 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.10 % 
+🌃 Evening                7303 commits        ███████████████░░░░░░░░░░   58.55 % 
+🌙 Night                  930 commits         ██░░░░░░░░░░░░░░░░░░░░░░░   07.46 % 
+```
+📅 **I'm Most Productive on Monday** 
+
+```text
+Monday                   2661 commits        █████░░░░░░░░░░░░░░░░░░░░   21.33 % 
+Tuesday                  2221 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.81 % 
+Wednesday                1599 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.82 % 
+Thursday                 1494 commits        ███░░░░░░░░░░░░░░░░░░░░░░   11.98 % 
+Friday                   886 commits         ██░░░░░░░░░░░░░░░░░░░░░░░   07.10 % 
+Saturday                 1581 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.67 % 
+Sunday                   2032 commits        ████░░░░░░░░░░░░░░░░░░░░░   16.29 % 
+```
+
+
+📊 **This Week I Spent My Time On** 
+
+```text
+🕑︎ Time Zone: Asia/Taipei
+
+💬 Programming Languages: 
+Python                   2 hrs 39 mins       ████████████░░░░░░░░░░░░░   49.36 % 
+SQL                      1 hr 2 mins         █████░░░░░░░░░░░░░░░░░░░░   19.44 % 
+YAML                     31 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   09.74 % 
+JavaScript               18 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   05.87 % 
+TypeScript               16 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   05.01 % 
+
+🔥 Editors: 
+PyCharm                  5 hrs 23 mins       █████████████████████████   100.00 % 
+
+💻 Operating System: 
+Windows                  5 hrs 23 mins       █████████████████████████   100.00 % 
+```
+
 **I Mostly Code in Python** 
 
 ```text
@@ -441,7 +483,7 @@ SCSS                     1 repo              █░░░░░░░░░░�
 
 
 
- Last Updated on 29/05/2026 00:24:59 UTC
+ Last Updated on 30/05/2026 00:24:02 UTC
 <!--END_SECTION:waka-->
 
 <br>
