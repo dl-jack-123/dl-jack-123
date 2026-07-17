@@ -412,17 +412,17 @@
 
 **🎪 My WakeTime stats**
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-658%20hrs%2023%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-659%20hrs%202%20mins-blue?style=flat)
 
 ![Profile Views](http://img.shields.io/badge/Profile%20Views-0-blue?style=flat)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-478.31%20thousand%20lines%20of%20code-blue?style=flat)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-478.32%20thousand%20lines%20of%20code-blue?style=flat)
 
 **🐱 My GitHub Data** 
 
 > 📦 235.2 kB Used in GitHub's Storage 
  > 
-> 🏆 782 Contributions in the Year 2026
+> 🏆 786 Contributions in the Year 2026
  > 
 > 🚫 Not Opted to Hire
  > 
@@ -430,44 +430,6 @@
  > 
 > 🔑 16 Private Repositories 
  > 
-**I'm a Night 🦉** 
-
-```text
-🌞 Morning                2593 commits        █████░░░░░░░░░░░░░░░░░░░░   18.66 % 
-🌆 Daytime                2112 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.20 % 
-🌃 Evening                8121 commits        ███████████████░░░░░░░░░░   58.43 % 
-🌙 Night                  1072 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.71 % 
-```
-📅 **I'm Most Productive on Monday** 
-
-```text
-Monday                   2925 commits        █████░░░░░░░░░░░░░░░░░░░░   21.05 % 
-Tuesday                  2483 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.87 % 
-Wednesday                1791 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.89 % 
-Thursday                 1666 commits        ███░░░░░░░░░░░░░░░░░░░░░░   11.99 % 
-Friday                   1001 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.20 % 
-Saturday                 1768 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.72 % 
-Sunday                   2264 commits        ████░░░░░░░░░░░░░░░░░░░░░   16.29 % 
-```
-
-
-📊 **This Week I Spent My Time On** 
-
-```text
-🕑︎ Time Zone: Asia/Taipei
-
-💬 Programming Languages: 
-Python                   13 mins             █████████████████████░░░░   85.18 % 
-textmate                 2 mins              ████░░░░░░░░░░░░░░░░░░░░░   14.71 % 
-Markdown                 0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.11 % 
-
-🔥 Editors: 
-PyCharm                  15 mins             █████████████████████████   100.00 % 
-
-💻 Operating System: 
-Windows                  15 mins             █████████████████████████   100.00 % 
-```
-
 **I Mostly Code in Python** 
 
 ```text
@@ -481,7 +443,7 @@ SCSS                     1 repo              █░░░░░░░░░░�
 
 
 
- Last Updated on 16/07/2026 00:20:20 UTC
+ Last Updated on 17/07/2026 00:20:40 UTC
 <!--END_SECTION:waka-->
 
 <br>
