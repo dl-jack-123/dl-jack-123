@@ -414,7 +414,7 @@
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-659%20hrs%202%20mins-blue?style=flat)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-0-blue?style=flat)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-1-blue?style=flat)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-478.32%20thousand%20lines%20of%20code-blue?style=flat)
 
@@ -422,7 +422,7 @@
 
 > 📦 235.2 kB Used in GitHub's Storage 
  > 
-> 🏆 786 Contributions in the Year 2026
+> 🏆 790 Contributions in the Year 2026
  > 
 > 🚫 Not Opted to Hire
  > 
@@ -430,6 +430,44 @@
  > 
 > 🔑 16 Private Repositories 
  > 
+**I'm a Night 🦉** 
+
+```text
+🌞 Morning                2593 commits        █████░░░░░░░░░░░░░░░░░░░░   18.65 % 
+🌆 Daytime                2116 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.22 % 
+🌃 Evening                8123 commits        ███████████████░░░░░░░░░░   58.41 % 
+🌙 Night                  1074 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.72 % 
+```
+📅 **I'm Most Productive on Monday** 
+
+```text
+Monday                   2925 commits        █████░░░░░░░░░░░░░░░░░░░░   21.03 % 
+Tuesday                  2483 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.86 % 
+Wednesday                1791 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.88 % 
+Thursday                 1669 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.00 % 
+Friday                   1005 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.23 % 
+Saturday                 1769 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.72 % 
+Sunday                   2264 commits        ████░░░░░░░░░░░░░░░░░░░░░   16.28 % 
+```
+
+
+📊 **This Week I Spent My Time On** 
+
+```text
+🕑︎ Time Zone: Asia/Taipei
+
+💬 Programming Languages: 
+Python                   23 mins             ███████████████░░░░░░░░░░   60.84 % 
+textmate                 15 mins             ██████████░░░░░░░░░░░░░░░   39.12 % 
+Markdown                 0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 % 
+
+🔥 Editors: 
+PyCharm                  38 mins             █████████████████████████   100.00 % 
+
+💻 Operating System: 
+Windows                  38 mins             █████████████████████████   100.00 % 
+```
+
 **I Mostly Code in Python** 
 
 ```text
@@ -443,7 +481,7 @@ SCSS                     1 repo              █░░░░░░░░░░�
 
 
 
- Last Updated on 17/07/2026 00:20:40 UTC
+ Last Updated on 18/07/2026 00:18:29 UTC
 <!--END_SECTION:waka-->
 
 <br>
