@@ -412,7 +412,9 @@
 
 **🎪 My WakeTime stats**
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-661%20hrs%2049%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-660%20hrs%2030%20mins-blue?style=flat)
+
+![AI Code Time](http://img.shields.io/badge/AI%20Code%20Time-11%20hrs%2055%20mins-blue?style=flat)
 
 ![Profile Views](http://img.shields.io/badge/Profile%20Views-1-blue?style=flat)
 
@@ -422,7 +424,7 @@
 
 > 📦 235.2 kB Used in GitHub's Storage 
  > 
-> 🏆 826 Contributions in the Year 2026
+> 🏆 830 Contributions in the Year 2026
  > 
 > 🚫 Not Opted to Hire
  > 
@@ -433,20 +435,20 @@
 **I'm a Night 🦉** 
 
 ```text
-🌞 Morning                2593 commits        █████░░░░░░░░░░░░░░░░░░░░   18.60 % 
-🌆 Daytime                2133 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.30 % 
-🌃 Evening                8134 commits        ███████████████░░░░░░░░░░   58.34 % 
-🌙 Night                  1083 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.77 % 
+🌞 Morning                2593 commits        █████░░░░░░░░░░░░░░░░░░░░   18.59 % 
+🌆 Daytime                2134 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.30 % 
+🌃 Evening                8136 commits        ███████████████░░░░░░░░░░   58.34 % 
+🌙 Night                  1084 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.77 % 
 ```
 📅 **I'm Most Productive on Monday** 
 
 ```text
-Monday                   2930 commits        █████░░░░░░░░░░░░░░░░░░░░   21.01 % 
-Tuesday                  2487 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.84 % 
+Monday                   2933 commits        █████░░░░░░░░░░░░░░░░░░░░   21.03 % 
+Tuesday                  2488 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.84 % 
 Wednesday                1796 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.88 % 
 Thursday                 1673 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.00 % 
-Friday                   1009 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.24 % 
-Saturday                 1776 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.74 % 
+Friday                   1009 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.23 % 
+Saturday                 1776 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.73 % 
 Sunday                   2272 commits        ████░░░░░░░░░░░░░░░░░░░░░   16.29 % 
 ```
 
@@ -470,6 +472,26 @@ PyCharm                  1 hr 48 mins        ███████████�
 Windows                  1 hr 48 mins        █████████████████████████   100.00 % 
 ```
 
+🤖 **AI Coding This Week** 
+
+```text
+⏱ AI Coding Time: 1 hr 6 mins (61.88%)
+
+✍️ 70 lines written by AI, 19 lines written by hand (78.65% AI-written)
+
+🔤 0 Input Tokens, 0 Output Tokens
+
+💵 $0.00 Estimated AI Cost This Week
+
+🧠 3 AI Sessions, 8 AI Prompts
+
+🔎 AI Coding Insights:
+🤖 AI-Driven — 78.65% of written lines came from AI
+📄 Detailed Prompter — average 688 characters per prompt
+🔁 Iterative Prompter — average 3 prompts per session
+🔍 Hands-On Reviewer — 95.66% of changed lines were hand-edited
+```
+
 **I Mostly Code in Python** 
 
 ```text
@@ -483,7 +505,7 @@ SCSS                     1 repo              █░░░░░░░░░░�
 
 
 
- Last Updated on 27/07/2026 00:21:32 UTC
+ Last Updated on 28/07/2026 00:20:00 UTC
 <!--END_SECTION:waka-->
 
 <br>
