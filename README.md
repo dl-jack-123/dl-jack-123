@@ -424,7 +424,7 @@
 
 > 📦 235.4 kB Used in GitHub's Storage 
  > 
-> 🏆 961 Contributions in the Year 2026
+> 🏆 965 Contributions in the Year 2026
  > 
 > 🚫 Not Opted to Hire
  > 
@@ -435,21 +435,21 @@
 **I'm a Night 🦉** 
 
 ```text
-🌞 Morning                2626 commits        █████░░░░░░░░░░░░░░░░░░░░   18.57 % 
-🌆 Daytime                2188 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.47 % 
-🌃 Evening                8213 commits        ███████████████░░░░░░░░░░   58.07 % 
-🌙 Night                  1116 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.89 % 
+🌞 Morning                2627 commits        █████░░░░░░░░░░░░░░░░░░░░   18.57 % 
+🌆 Daytime                2189 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.47 % 
+🌃 Evening                8214 commits        ███████████████░░░░░░░░░░   58.06 % 
+🌙 Night                  1117 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.90 % 
 ```
 📅 **I'm Most Productive on Monday** 
 
 ```text
-Monday                   2982 commits        █████░░░░░░░░░░░░░░░░░░░░   21.08 % 
-Tuesday                  2514 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.78 % 
-Wednesday                1817 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.85 % 
+Monday                   2983 commits        █████░░░░░░░░░░░░░░░░░░░░   21.09 % 
+Tuesday                  2514 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.77 % 
+Wednesday                1817 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.84 % 
 Thursday                 1696 commits        ███░░░░░░░░░░░░░░░░░░░░░░   11.99 % 
-Friday                   1029 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.28 % 
-Saturday                 1807 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.78 % 
-Sunday                   2298 commits        ████░░░░░░░░░░░░░░░░░░░░░   16.25 % 
+Friday                   1029 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.27 % 
+Saturday                 1807 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.77 % 
+Sunday                   2301 commits        ████░░░░░░░░░░░░░░░░░░░░░   16.26 % 
 ```
 
 
@@ -459,13 +459,17 @@ Sunday                   2298 commits        ████░░░░░░░�
 🕑︎ Time Zone: Asia/Taipei
 
 💬 Programming Languages: 
-No Activity Tracked This Week
+.env file                16 mins             █████████░░░░░░░░░░░░░░░░   36.47 % 
+Bash                     16 mins             █████████░░░░░░░░░░░░░░░░   35.21 % 
+SQL                      12 mins             ███████░░░░░░░░░░░░░░░░░░   26.65 % 
+Python                   0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   01.42 % 
+textmate                 0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.24 % 
 
 🔥 Editors: 
-No Activity Tracked This Week
+PyCharm                  46 mins             █████████████████████████   100.00 % 
 
 💻 Operating System: 
-No Activity Tracked This Week
+Windows                  46 mins             █████████████████████████   100.00 % 
 ```
 
 🤖 **AI Coding This Week** 
@@ -487,7 +491,7 @@ SCSS                     1 repo              █░░░░░░░░░░�
 
 
 
- Last Updated on 30/08/2026 00:06:00 UTC
+ Last Updated on 31/08/2026 00:05:34 UTC
 <!--END_SECTION:waka-->
 
 <br>
