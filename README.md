@@ -418,13 +418,13 @@
 
 ![Profile Views](http://img.shields.io/badge/Profile%20Views-0-blue?style=flat)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-507.85%20thousand%20lines%20of%20code-blue?style=flat)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-507.86%20thousand%20lines%20of%20code-blue?style=flat)
 
 **🐱 My GitHub Data** 
 
 > 📦 235.5 kB Used in GitHub's Storage 
  > 
-> 🏆 1,147 Contributions in the Year 2026
+> 🏆 1,151 Contributions in the Year 2026
  > 
 > 🚫 Not Opted to Hire
  > 
@@ -435,19 +435,19 @@
 **I'm a Night 🦉** 
 
 ```text
-🌞 Morning                2712 commits        █████░░░░░░░░░░░░░░░░░░░░   18.70 % 
-🌆 Daytime                2272 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.67 % 
-🌃 Evening                8358 commits        ██████████████░░░░░░░░░░░   57.63 % 
-🌙 Night                  1161 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   08.01 % 
+🌞 Morning                2713 commits        █████░░░░░░░░░░░░░░░░░░░░   18.70 % 
+🌆 Daytime                2273 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.67 % 
+🌃 Evening                8359 commits        ██████████████░░░░░░░░░░░   57.62 % 
+🌙 Night                  1162 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   08.01 % 
 ```
 📅 **I'm Most Productive on Monday** 
 
 ```text
-Monday                   3057 commits        █████░░░░░░░░░░░░░░░░░░░░   21.08 % 
-Tuesday                  2551 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.59 % 
-Wednesday                1879 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.96 % 
-Thursday                 1721 commits        ███░░░░░░░░░░░░░░░░░░░░░░   11.87 % 
-Friday                   1065 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.34 % 
+Monday                   3057 commits        █████░░░░░░░░░░░░░░░░░░░░   21.07 % 
+Tuesday                  2551 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.58 % 
+Wednesday                1879 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.95 % 
+Thursday                 1724 commits        ███░░░░░░░░░░░░░░░░░░░░░░   11.88 % 
+Friday                   1066 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.35 % 
 Saturday                 1857 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.80 % 
 Sunday                   2373 commits        ████░░░░░░░░░░░░░░░░░░░░░   16.36 % 
 ```
@@ -459,19 +459,38 @@ Sunday                   2373 commits        ████░░░░░░░�
 🕑︎ Time Zone: Asia/Taipei
 
 💬 Programming Languages: 
-No Activity Tracked This Week
+Python                   24 mins             █████████████████████████   100.00 % 
 
 🔥 Editors: 
-No Activity Tracked This Week
+Copilot                  14 mins             ██████████████░░░░░░░░░░░   57.79 % 
+PyCharm                  6 mins              ██████░░░░░░░░░░░░░░░░░░░   24.97 % 
+Kiro                     2 mins              ██░░░░░░░░░░░░░░░░░░░░░░░   09.73 % 
+Copilot CLI              1 min               ██░░░░░░░░░░░░░░░░░░░░░░░   07.51 % 
 
 💻 Operating System: 
-No Activity Tracked This Week
+Windows                  24 mins             █████████████████████████   100.00 % 
 ```
 
 🤖 **AI Coding This Week** 
 
 ```text
-No AI Coding Activity Tracked This Week
+⏱ AI Coding Time: 22 mins (94.49%)
+
+✍️ 0 lines written by AI, 0 lines written by hand (0% AI-written)
+
+🔤 127,770 Input Tokens, 0 Output Tokens
+
+💵 $0.02 Estimated AI Cost This Week
+
+🧠 4 AI Sessions, 6 AI Prompts
+
+GPT                      0 lines             ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
+
+🔎 AI Coding Insights:
+🧑‍💻 Mostly Hands-On — 0% of written lines came from AI
+📄 Detailed Prompter — average 1,000 characters per prompt
+🔁 Iterative Prompter — average 2 prompts per session
+🚀 High AI Trust — 0% of changed lines were hand-edited
 ```
 
 **I Mostly Code in Python** 
@@ -487,7 +506,7 @@ SCSS                     1 repo              █░░░░░░░░░░�
 
 
 
- Last Updated on 15/10/2026 00:06:09 UTC
+ Last Updated on 16/10/2026 00:05:53 UTC
 <!--END_SECTION:waka-->
 
 <br>
