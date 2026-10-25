@@ -90,6 +90,21 @@ const sources: Resource[] = [
         path: 'audio/atmosphere/office.mp3',
     },
     {
+        name: 'musicSuspense',
+        type: 'audio',
+        path: 'audio/music/suspense-background.mp3',
+    },
+    {
+        name: 'musicTrailer',
+        type: 'audio',
+        path: 'audio/music/stylish-trailer-percussion.mp3',
+    },
+    {
+        name: 'musicTravel',
+        type: 'audio',
+        path: 'audio/music/inspiring-travel-acoustic.mp3',
+    },
+    {
         name: 'ccType',
         type: 'audio',
         path: 'audio/cc/type.mp3',

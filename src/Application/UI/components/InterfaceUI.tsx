@@ -55,16 +55,23 @@ const InterfaceUI: React.FC<InterfaceUIProps> = ({}) => {
     }, []);
 
     return !loading ? (
-        <motion.div
-            initial="hide"
-            variants={vars}
-            animate={visible ? 'visible' : 'hide'}
-            style={styles.wrapper}
-            className="interface-wrapper"
-            id="prevent-click"
-        >
-            <InfoOverlay visible={visible} />
-        </motion.div>
+        <>
+            <motion.div
+                initial="hide"
+                variants={vars}
+                animate={visible ? 'visible' : 'hide'}
+                style={styles.wrapper}
+                className="interface-wrapper"
+                id="prevent-click"
+            >
+                <InfoOverlay visible={visible} />
+            </motion.div>
+            <p style={styles.credits} id="prevent-click">
+                Music from Pixabay: &quot;Suspense Background&quot; by
+                nastelbom, &quot;Stylish Trailer Percussion&quot; by audioera,
+                &quot;Inspiring Travel Acoustic&quot; by loka_music
+            </p>
+        </>
     ) : (
         <></>
     );
@@ -100,6 +107,18 @@ const styles: StyleSheetCSS = {
         display: 'flex',
         position: 'absolute',
         boxSizing: 'border-box',
+    },
+    credits: {
+        position: 'fixed',
+        left: 8,
+        bottom: 6,
+        right: 8,
+        margin: 0,
+        fontSize: 9,
+        lineHeight: 1.3,
+        color: 'rgba(0, 0, 0, 0.55)',
+        pointerEvents: 'none',
+        userSelect: 'none',
     },
 };
 

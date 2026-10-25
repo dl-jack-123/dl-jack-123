@@ -2,6 +2,11 @@ import AudioManager from './AudioManager';
 import * as THREE from 'three';
 import UIEventBus from '../UI/EventBus';
 import { Vector3 } from 'three';
+import {
+    MUSIC_OFF,
+    isValidMusicChoice,
+    loadMusicChoice,
+} from './musicTracks';
 
 export class AudioSource {
     manager: AudioManager;
@@ -70,9 +75,37 @@ export class ComputerAudio extends AudioSource {
 
 export class AmbienceAudio extends AudioSource {
     poolKey: string;
+    musicKey: string | null = null;
+    musicChoice: string = loadMusicChoice();
+    started = false;
+
+    playMusic(choice: string) {
+        this.musicChoice = choice;
+        if (this.musicKey) {
+            this.manager.stopAudio(this.musicKey);
+            this.musicKey = null;
+        }
+        if (choice === MUSIC_OFF) return;
+        // Low volume, loops. Master volume / mute is handled by the audio manager.
+        this.musicKey = this.manager.playAudio(choice, {
+            volume: 0.3,
+            loop: true,
+            randDetuneScale: 0,
+        });
+    }
 
     constructor(manager: AudioManager) {
         super(manager);
+        UIEventBus.on('musicChange', (choice: string) => {
+            if (!isValidMusicChoice(choice) || choice === this.musicChoice)
+                return;
+            // Before the loading screen is done, just remember the choice
+            if (!this.started) {
+                this.musicChoice = choice;
+                return;
+            }
+            this.playMusic(choice);
+        });
         UIEventBus.on('loadingScreenDone', () => {
             this.poolKey = this.manager.playAudio('office', {
                 volume: 1,
@@ -83,6 +116,8 @@ export class AmbienceAudio extends AudioSource {
                     frequency: 1000,
                 },
             });
+            this.started = true;
+            this.playMusic(this.musicChoice);
             this.manager.playAudio('startup', {
                 volume: 0.4,
                 randDetuneScale: 0,

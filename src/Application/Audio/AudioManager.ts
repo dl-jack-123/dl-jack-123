@@ -16,6 +16,8 @@ export default class Audio {
         ambience: AmbienceAudio;
     };
     scene: THREE.Scene;
+    muted = false;
+    masterVolume = 1;
 
     constructor() {
         this.application = new Application();
@@ -41,8 +43,18 @@ export default class Audio {
         });
 
         UIEventBus.on('muteToggle', (mute: boolean) => {
-            this.listener.setMasterVolume(mute ? 0 : 1);
+            this.muted = mute;
+            this.applyMasterVolume();
         });
+
+        UIEventBus.on('volumeChange', (volume: number) => {
+            this.masterVolume = volume;
+            this.applyMasterVolume();
+        });
+    }
+
+    applyMasterVolume() {
+        this.listener.setMasterVolume(this.muted ? 0 : this.masterVolume);
     }
 
     playAudio(
@@ -150,6 +162,14 @@ export default class Audio {
             this.audioPool[poolKey] = audio;
         }
         return poolKey;
+    }
+
+    stopAudio(poolKey: string) {
+        const a = this.audioPool[poolKey];
+        if (a) {
+            if (a.isPlaying) a.stop();
+            delete this.audioPool[poolKey];
+        }
     }
 
     setAudioFilterFrequency(audio: string, frequency: number) {

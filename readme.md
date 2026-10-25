@@ -23,3 +23,11 @@ npm run build    # production build into ./public
 Pushing to the `portfolio-3d` branch runs `.github/workflows/deploy-pages.yml`.
 In the repository settings, set Pages > Source to "GitHub Actions".
 Site URL: https://dl-jack-123.github.io/dl-jack-123/
+
+## Credits
+- 3D room based on [henryjeff/portfolio-website](https://github.com/henryjeff/portfolio-website) (MIT).
+- Music from [Pixabay](https://pixabay.com/music/), used under the Pixabay Content License:
+  - "Suspense Background" by nastelbom (https://pixabay.com/music/suspense-suspense-suspense-background-623748/)
+  - "Stylish Trailer Percussion" by audioera
+  - "Inspiring Travel Acoustic" by loka_music
+
