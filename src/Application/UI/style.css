@@ -183,3 +183,9 @@ br {
         padding-bottom: 32px;
     }
 }
+
+/* light theme for the HUD chips */
+.info-light p {
+    color: #2b2b2b;
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+}

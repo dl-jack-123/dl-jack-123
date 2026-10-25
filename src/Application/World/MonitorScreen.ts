@@ -202,7 +202,7 @@ export default class MonitorScreen extends EventEmitter {
         iframe.style.padding = IFRAME_PADDING + 'px';
         iframe.style.boxSizing = 'border-box';
         iframe.style.opacity = '1';
-        iframe.className = 'jitter';
+        iframe.className = '';
         iframe.id = 'computer-screen';
         iframe.frameBorder = '0';
         iframe.title = 'DL-OS';
@@ -262,42 +262,24 @@ export default class MonitorScreen extends EventEmitter {
     createTextureLayers() {
         const textures = this.resources.items.texture;
 
-        this.getVideoTextures('video-1');
-        this.getVideoTextures('video-2');
 
         // Scale factor to multiply depth offset by
         const scaleFactor = 4;
 
         // Construct the texture layers
         const layers = {
-            smudge: {
-                texture: textures.monitorSmudgeTexture,
-                blending: THREE.AdditiveBlending,
-                opacity: 0.12,
-                offset: 24,
-            },
             innerShadow: {
                 texture: textures.monitorShadowTexture,
                 blending: THREE.NormalBlending,
                 opacity: 1,
                 offset: 5,
             },
-            video: {
-                texture: this.videoTextures['video-1'],
-                blending: THREE.AdditiveBlending,
-                opacity: 0.5,
-                offset: 10,
-            },
-            video2: {
-                texture: this.videoTextures['video-2'],
-                blending: THREE.AdditiveBlending,
-                opacity: 0.1,
-                offset: 15,
-            },
         };
 
         // Declare max offset
-        let maxOffset = -1;
+        // Keep the original screen depth (24 * scaleFactor) so the bezel
+        // geometry still lines up after removing the CRT smudge layer.
+        let maxOffset = 24 * scaleFactor;
 
         // Add the texture layers to the screen
         for (const [_, layer] of Object.entries(layers)) {

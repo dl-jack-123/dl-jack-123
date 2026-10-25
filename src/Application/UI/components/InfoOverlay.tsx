@@ -105,7 +105,7 @@ const InfoOverlay: React.FC<InfoOverlayProps> = ({ visible }) => {
     }, [time]);
 
     return (
-        <div style={styles.wrapper}>
+        <div style={styles.wrapper} className="info-light">
             {nameText !== '' && (
                 <div style={styles.container}>
                     <p>{nameText}</p>
@@ -145,7 +145,9 @@ const InfoOverlay: React.FC<InfoOverlayProps> = ({ visible }) => {
 
 const styles: StyleSheetCSS = {
     container: {
-        background: 'black',
+        background: 'rgba(255, 255, 255, 0.85)',
+        color: '#2b2b2b',
+        borderRadius: 4,
         padding: 4,
         paddingLeft: 16,
         paddingRight: 16,

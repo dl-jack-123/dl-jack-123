@@ -4,6 +4,7 @@
 
   var PROFILE = {
     name: 'DL.Chiu',
+    role: 'Backend & Data Engineer',
     tagline: "A great product starts with a single line of code, but it's the deployment that makes it real.",
     summary: 'Python developer focused on backend services, data pipelines and automated trading tools. I like shipping things end to end: code, containers, CI and monitoring.',
     // Snapshot copied from the WakaTime block of the profile README (25 Oct 2026).
@@ -52,12 +53,14 @@
   // ---------- app content ----------
   var APPS = {
     about: {
-      title: 'About Me', glyph: '👤', w: 560, h: 420,
+      title: 'About Me', glyph: '👤', w: 720, h: 500,
       render: function () {
-        return '<h2>' + esc(PROFILE.name) + '</h2><p><i>' + esc(PROFILE.tagline) + '</i></p><p>' +
-          esc(PROFILE.summary) + '</p><h3>Snapshot</h3><ul>' +
-          PROFILE.stats.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') +
-          '</ul><p class="muted">Stats copied from my GitHub profile on 25 Oct 2026.</p>';
+        return '<div class="hero"><h1>' + esc(PROFILE.name) + '</h1>' +
+          '<p class="role">' + esc(PROFILE.role) + '</p>' +
+          '<p class="tagline">' + esc(PROFILE.tagline) + '</p>' +
+          '<p>' + esc(PROFILE.summary) + '</p>' +
+          '<div class="links">' + PROFILE.links.map(function (l) { return link(l.url, l.label); }).join('') + '</div>' +
+          '<p class="stats">' + PROFILE.stats.map(esc).join(' · ') + '<br>Snapshot from my GitHub profile, 25 Oct 2026.</p></div>';
       }
     },
     skills: {

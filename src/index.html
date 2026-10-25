@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
-      background-color: rgb(0, 0, 0);
+      background: linear-gradient(#bdb8b0, #e8e5de) fixed;
       margin: 0;
     }
 
     #webgl {
       pointer-events: none;
+      /* lift the dark baked room towards a bright, daylight look */
+      filter: brightness(1.55) contrast(0.88) saturate(0.8) sepia(0.12);
     }
 
     #ui-app {
