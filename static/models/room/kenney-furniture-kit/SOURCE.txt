@@ -1,0 +1,7 @@
+Title: Furniture Kit (selected pieces: desk, chairDesk, computerScreen, computerKeyboard, computerMouse, laptop, books, cardboardBoxClosed, lampRoundTable, lampSquareTable, plantSmall1, pottedPlant, bookcaseOpenLow)
+Author: Kenney (www.kenney.nl)
+Licence: CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/). Attribution not required; credit is optional.
+Source: https://kenney.nl/assets/furniture-kit
+Download URL: https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip
+Note: the pack's License.txt says "Furniture Kit (2.0)"; the web page says version 1.0 (released 2018).
+Downloaded: 2026-10-25

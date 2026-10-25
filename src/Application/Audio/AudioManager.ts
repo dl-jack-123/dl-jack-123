@@ -80,6 +80,7 @@ export default class Audio {
 
         // Setup
         const buffer = this.loadedAudio[sourceName];
+        if (!buffer) return '';
         const poolKey = sourceName + '_' + Object.keys(this.audioPool).length;
 
         let audio: THREE.Audio<any> | THREE.PositionalAudio = new THREE.Audio(

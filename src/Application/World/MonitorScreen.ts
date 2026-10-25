@@ -7,13 +7,7 @@ import Resources from '../Utils/Resources';
 import Sizes from '../Utils/Sizes';
 import Camera from '../Camera/Camera';
 import EventEmitter from '../Utils/EventEmitter';
-
-const SCREEN_SIZE = { w: 1280, h: 1024 };
-const IFRAME_PADDING = 32;
-const IFRAME_SIZE = {
-    w: SCREEN_SIZE.w - IFRAME_PADDING,
-    h: SCREEN_SIZE.h - IFRAME_PADDING,
-};
+import { MonitorConfig, dimOpacity } from './roomLayout';
 
 export default class MonitorScreen extends EventEmitter {
     application: Application;
@@ -32,19 +26,24 @@ export default class MonitorScreen extends EventEmitter {
     inComputer: boolean;
     mouseClickInProgress: boolean;
     dimmingPlane: THREE.Mesh;
+    config: MonitorConfig;
     videoTextures: { [key in string]: THREE.VideoTexture };
 
-    constructor() {
+    constructor(config: MonitorConfig) {
         super();
+        this.config = config;
         this.application = new Application();
         this.scene = this.application.scene;
         this.cssScene = this.application.cssScene;
         this.sizes = this.application.sizes;
         this.resources = this.application.resources;
-        this.screenSize = new THREE.Vector2(SCREEN_SIZE.w, SCREEN_SIZE.h);
+        this.screenSize = new THREE.Vector2(
+            config.worldSize.w,
+            config.worldSize.h
+        );
         this.camera = this.application.camera;
-        this.position = new THREE.Vector3(0, 950, 255);
-        this.rotation = new THREE.Euler(-3 * THREE.MathUtils.DEG2RAD, 0, 0);
+        this.position = config.position.clone();
+        this.rotation = config.euler.clone();
         this.videoTextures = {};
         this.mouseClickInProgress = false;
         this.shouldLeaveMonitor = false;
@@ -136,10 +135,10 @@ export default class MonitorScreen extends EventEmitter {
     createIframe() {
         // Create container
         const container = document.createElement('div');
-        container.style.width = this.screenSize.width + 'px';
-        container.style.height = this.screenSize.height + 'px';
+        container.style.width = this.config.cssSize.w + 'px';
+        container.style.height = this.config.cssSize.h + 'px';
         container.style.opacity = '1';
-        container.style.background = '#1d2e2f';
+        container.style.background = this.config.containerBg;
 
         // Create iframe
         const iframe = document.createElement('iframe');
@@ -158,8 +157,8 @@ export default class MonitorScreen extends EventEmitter {
                     if (event.data.type === 'mousemove') {
                         var clRect = iframe.getBoundingClientRect();
                         const { top, left, width, height } = clRect;
-                        const widthRatio = width / IFRAME_SIZE.w;
-                        const heightRatio = height / IFRAME_SIZE.h;
+                        const widthRatio = width / this.config.iframeSize.w;
+                        const heightRatio = height / this.config.iframeSize.h;
 
                         // @ts-ignore
                         evt.clientX = Math.round(
@@ -197,9 +196,9 @@ export default class MonitorScreen extends EventEmitter {
         if (urlParams.has('dev')) {
             iframe.src = 'http://localhost:3000/';
         }
-        iframe.style.width = this.screenSize.width + 'px';
-        iframe.style.height = this.screenSize.height + 'px';
-        iframe.style.padding = IFRAME_PADDING + 'px';
+        iframe.style.width = this.config.cssSize.w + 'px';
+        iframe.style.height = this.config.cssSize.h + 'px';
+        iframe.style.padding = this.config.iframePadding + 'px';
         iframe.style.boxSizing = 'border-box';
         iframe.style.opacity = '1';
         iframe.className = '';
@@ -225,12 +224,26 @@ export default class MonitorScreen extends EventEmitter {
         // copy monitor position and rotation
         object.position.copy(this.position);
         object.rotation.copy(this.rotation);
+        // CSS pixels -> world units (1 for classic)
+        object.scale.set(
+            this.config.worldSize.w / this.config.cssSize.w,
+            this.config.worldSize.h / this.config.cssSize.h,
+            1
+        );
 
         // Add to CSS scene
         this.cssScene.add(object);
 
         // Create GL plane
-        const material = new THREE.MeshLambertMaterial();
+        // Must be unlit in the bright room: lights would write RGB > 0 into a
+        // premultiplied canvas and wash out the iframe behind it.
+        const material: THREE.Material =
+            this.config.dim === 'bright'
+                ? new THREE.MeshBasicMaterial({
+                      color: 0x000000,
+                      toneMapped: false,
+                  })
+                : new THREE.MeshLambertMaterial();
         material.side = THREE.DoubleSide;
         material.opacity = 0;
         material.transparent = true;
@@ -245,11 +258,12 @@ export default class MonitorScreen extends EventEmitter {
 
         // Create the GL plane mesh
         const mesh = new THREE.Mesh(geometry, material);
+        mesh.renderOrder = this.config.dim === 'bright' ? 10 : 0;
 
-        // Copy the position, rotation and scale of the CSS plane to the GL plane
+        // Copy the position and rotation of the CSS plane to the GL plane
+        // (the geometry is already in world units, so no scale)
         mesh.position.copy(object.position);
         mesh.rotation.copy(object.rotation);
-        mesh.scale.copy(object.scale);
 
         // Add to gl scene
         this.scene.add(mesh);
@@ -260,6 +274,7 @@ export default class MonitorScreen extends EventEmitter {
      * @returns the maximum offset of the texture layers
      */
     createTextureLayers() {
+        if (!this.config.innerShadow) return this.config.enclosureDepth;
         const textures = this.resources.items.texture;
 
 
@@ -279,7 +294,7 @@ export default class MonitorScreen extends EventEmitter {
         // Declare max offset
         // Keep the original screen depth (24 * scaleFactor) so the bezel
         // geometry still lines up after removing the CRT smudge layer.
-        let maxOffset = 24 * scaleFactor;
+        let maxOffset = this.config.enclosureDepth;
 
         // Add the texture layers to the screen
         for (const [_, layer] of Object.entries(layers)) {
@@ -358,6 +373,7 @@ export default class MonitorScreen extends EventEmitter {
      * @param maxOffset the maximum offset of the texture layers
      */
     createEnclosingPlanes(maxOffset: number) {
+        if (maxOffset <= 0) return;
         // Create planes, lots of boiler plate code here because I'm lazy
         const planes = {
             left: {
@@ -423,7 +439,7 @@ export default class MonitorScreen extends EventEmitter {
     createEnclosingPlane(plane: EnclosingPlane) {
         const material = new THREE.MeshBasicMaterial({
             side: THREE.DoubleSide,
-            color: 0x48493f,
+            color: this.config.bezelColor,
         });
 
         const geometry = new THREE.PlaneGeometry(plane.size.x, plane.size.y);
@@ -450,12 +466,20 @@ export default class MonitorScreen extends EventEmitter {
 
         const mesh = new THREE.Mesh(plane, material);
 
-        mesh.position.copy(
-            this.offsetPosition(
-                this.position,
-                new THREE.Vector3(0, 0, maxOffset - 5)
-            )
-        );
+        if (this.config.dim === 'bright') {
+            // 1.5 mm in front of the glass along the screen normal
+            mesh.position
+                .copy(this.position)
+                .addScaledVector(this.config.normal, 1.5);
+            mesh.renderOrder = 11;
+        } else {
+            mesh.position.copy(
+                this.offsetPosition(
+                    this.position,
+                    new THREE.Vector3(0, 0, maxOffset - 5)
+                )
+            );
+        }
 
         mesh.rotation.copy(this.rotation);
 
@@ -478,7 +502,15 @@ export default class MonitorScreen extends EventEmitter {
     }
 
     update() {
-        if (this.dimmingPlane) {
+        if (this.dimmingPlane && this.config.dim === 'bright') {
+            const view = this.camera.instance.position
+                .clone()
+                .sub(this.position);
+            const dist = view.length();
+            const dot = Math.max(0, view.normalize().dot(this.config.normal));
+            // @ts-ignore
+            this.dimmingPlane.material.opacity = dimOpacity(dist, dot);
+        } else if (this.dimmingPlane) {
             const planeNormal = new THREE.Vector3(0, 0, 1);
             const viewVector = new THREE.Vector3();
             viewVector.copy(this.camera.instance.position);

@@ -11,11 +11,8 @@ import Time from '../Utils/Time';
 import BezierEasing from 'bezier-easing';
 import {
     CameraKeyframeInstance,
-    MonitorKeyframe,
-    IdleKeyframe,
-    LoadingKeyframe,
-    DeskKeyframe,
-    OrbitControlsStart,
+    createKeyframes,
+    ORBIT_LIMITS,
 } from './CameraKeyframes';
 
 export enum CameraKey {
@@ -58,13 +55,7 @@ export default class Camera extends EventEmitter {
 
         this.freeCam = false;
 
-        this.keyframes = {
-            idle: new IdleKeyframe(),
-            monitor: new MonitorKeyframe(),
-            loading: new LoadingKeyframe(),
-            desk: new DeskKeyframe(),
-            orbitControlsStart: new OrbitControlsStart(),
-        };
+        this.keyframes = createKeyframes();
 
         document.addEventListener('mousedown', (event) => {
             const target = event.target as HTMLElement;
@@ -214,9 +205,12 @@ export default class Camera extends EventEmitter {
             this.keyframes.orbitControlsStart.position
         );
         this.orbitControls.dampingFactor = 0.05;
-        this.orbitControls.maxPolarAngle = Math.PI / 2;
-        this.orbitControls.minDistance = 4000;
-        this.orbitControls.maxDistance = 29000;
+        this.orbitControls.maxPolarAngle = ORBIT_LIMITS.maxPolarAngle;
+        this.orbitControls.minPolarAngle = ORBIT_LIMITS.minPolarAngle;
+        this.orbitControls.minAzimuthAngle = ORBIT_LIMITS.minAzimuthAngle;
+        this.orbitControls.maxAzimuthAngle = ORBIT_LIMITS.maxAzimuthAngle;
+        this.orbitControls.minDistance = ORBIT_LIMITS.minDistance;
+        this.orbitControls.maxDistance = ORBIT_LIMITS.maxDistance;
 
         this.orbitControls.update();
     }

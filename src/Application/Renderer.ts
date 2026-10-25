@@ -9,6 +9,7 @@ import screenVert from './Shaders/screen/vertex.glsl';
 // @ts-ignore
 import screenFrag from './Shaders/screen/fragment.glsl';
 import Time from './Utils/Time';
+import { isBright } from './roomMode';
 
 export default class Renderer {
     application: Application;
@@ -50,6 +51,10 @@ export default class Renderer {
         this.instance.outputEncoding = THREE.sRGBEncoding;
         // this.instance.toneMapping = THREE.ACESFilmicToneMapping;
         // this.instance.toneMappingExposure = 0.9;
+        if (isBright) {
+            this.instance.shadowMap.enabled = true;
+            this.instance.shadowMap.type = THREE.PCFSoftShadowMap;
+        }
         this.instance.setSize(this.sizes.width, this.sizes.height);
         this.instance.setPixelRatio(Math.min(this.sizes.pixelRatio, 2));
         this.instance.setClearColor(0x000000, 0.0);

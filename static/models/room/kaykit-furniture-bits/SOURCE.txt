@@ -1,0 +1,6 @@
+Title: KayKit: Furniture Bits (free version; selected pieces: table_medium_long, chair_A, chair_stool, lamp_table, lamp_standing, book_set, book_single, cactus_small_A, shelf_A_small, cabinet_small, pictureframe_small_A)
+Author: Kay Lousberg (www.kaylousberg.com)
+Licence: CC0 1.0 Universal (http://creativecommons.org/publicdomain/zero/1.0/). Credit appreciated, not required.
+Source: https://kaylousberg.itch.io/furniture-bits
+Repository: https://github.com/KayKit-Game-Assets/KayKit-Furniture-Bits-1.0 (downloaded as main.zip archive)
+Downloaded: 2026-10-25

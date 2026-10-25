@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import UIEventBus from '../EventBus';
 import InfoOverlay from './InfoOverlay';
+import { isBright } from '../../roomMode';
+import { modelCreditsLine } from '../../World/roomCredits';
 
 interface InterfaceUIProps {}
 
@@ -66,11 +68,19 @@ const InterfaceUI: React.FC<InterfaceUIProps> = ({}) => {
             >
                 <InfoOverlay visible={visible} />
             </motion.div>
-            <p style={styles.credits} id="prevent-click">
-                Music from Pixabay: &quot;Suspense Background&quot; by
-                nastelbom, &quot;Stylish Trailer Percussion&quot; by audioera,
-                &quot;Inspiring Travel Acoustic&quot; by loka_music
-            </p>
+            <div style={isBright ? styles.creditsBright : styles.credits}>
+                <p style={styles.creditLine}>
+                    Music from Pixabay: &quot;Suspense Background&quot; by
+                    nastelbom, &quot;Stylish Trailer Percussion&quot; by
+                    audioera, &quot;Inspiring Travel Acoustic&quot; by
+                    loka_music
+                </p>
+                {isBright && (
+                    <p style={styles.creditLine}>
+                        {modelCreditsLine(window.innerWidth < 480)}
+                    </p>
+                )}
+            </div>
         </>
     ) : (
         <></>
@@ -119,6 +129,24 @@ const styles: StyleSheetCSS = {
         color: 'rgba(0, 0, 0, 0.55)',
         pointerEvents: 'none',
         userSelect: 'none',
+    },
+    creditsBright: {
+        position: 'fixed',
+        left: 8,
+        bottom: 6,
+        right: 8,
+        margin: 0,
+        fontSize: 10,
+        lineHeight: 1.3,
+        color: 'rgba(0, 0, 0, 0.7)',
+        pointerEvents: 'none',
+        userSelect: 'none',
+    },
+    creditLine: {
+        margin: 0,
+        color: 'inherit',
+        fontSize: 'inherit',
+        lineHeight: 'inherit',
     },
 };
 

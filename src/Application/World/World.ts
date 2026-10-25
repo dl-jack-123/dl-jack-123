@@ -8,12 +8,21 @@ import CoffeeSteam from './CoffeeSteam';
 import Cursor from './Cursor';
 import Hitboxes from './Hitboxes';
 import AudioManager from '../Audio/AudioManager';
+import BrightRoom from './BrightRoom';
+import { isBright } from '../roomMode';
+import {
+    brightMonitorConfig,
+    brightSteamOptions,
+    classicMonitorConfig,
+} from './roomLayout';
+import { CameraKey } from '../Camera/Camera';
 export default class World {
     application: Application;
     scene: THREE.Scene;
     resources: Resources;
 
     // Objects in the scene
+    brightRoom: BrightRoom;
     environment: Environment;
     decor: Decor;
     computerSetup: ComputerSetup;
@@ -29,11 +38,17 @@ export default class World {
         // Wait for resources
         this.resources.on('ready', () => {
             // Setup
-            this.environment = new Environment();
-            this.decor = new Decor();
-            this.computerSetup = new ComputerSetup();
-            this.monitorScreen = new MonitorScreen();
-            this.coffeeSteam = new CoffeeSteam();
+            if (isBright) {
+                this.brightRoom = new BrightRoom();
+                this.monitorScreen = new MonitorScreen(brightMonitorConfig());
+                this.coffeeSteam = new CoffeeSteam(brightSteamOptions());
+            } else {
+                this.environment = new Environment();
+                this.decor = new Decor();
+                this.computerSetup = new ComputerSetup();
+                this.monitorScreen = new MonitorScreen(classicMonitorConfig());
+                this.coffeeSteam = new CoffeeSteam();
+            }
             this.audioManager = new AudioManager();
             // const hb = new Hitboxes();
             // this.cursor = new Cursor();
@@ -45,5 +60,15 @@ export default class World {
         if (this.environment) this.environment.update();
         if (this.coffeeSteam) this.coffeeSteam.update();
         if (this.audioManager) this.audioManager.update();
+        if (this.brightRoom) {
+            // The chair stands between the camera and the screen at the monitor key
+            const cam = this.application.camera;
+            this.brightRoom.setChairVisible(
+                !(
+                    cam.currentKeyframe === CameraKey.MONITOR ||
+                    cam.targetKeyframe === CameraKey.MONITOR
+                )
+            );
+        }
     }
 }

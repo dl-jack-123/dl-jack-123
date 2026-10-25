@@ -4,6 +4,15 @@ import Time from '../Utils/Time';
 import Application from '../Application';
 import Mouse from '../Utils/Mouse';
 import Sizes from '../Utils/Sizes';
+import { isBright } from '../roomMode';
+import {
+    computeScreen,
+    deskDistance,
+    dirFromAngles,
+    getAspect,
+    idleDistance,
+    monitorDistance,
+} from '../World/roomLayout';
 
 export class CameraKeyframeInstance {
     position: THREE.Vector3;
@@ -141,3 +150,140 @@ export class OrbitControlsStart extends CameraKeyframeInstance {
 
     update() {}
 }
+
+// ---------------- Bright room keyframes ----------------
+
+const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
+const DEG = THREE.MathUtils.DEG2RAD;
+
+const mk = (x = 0, y = 0, z = 0): CameraKeyframe => ({
+    position: new THREE.Vector3(x, y, z),
+    focalPoint: new THREE.Vector3(x, y, z),
+});
+
+export class BrightIdleKeyframe extends CameraKeyframeInstance {
+    application: Application;
+    target = new THREE.Vector3(0, 700, -300);
+
+    constructor() {
+        super(mk());
+        this.application = new Application();
+        this.focalPoint.copy(this.target);
+        this.update();
+    }
+
+    update() {
+        const { sizes, time } = this.application;
+        const ms = time.elapsed;
+        const az = 38 + 5 * Math.sin((2 * Math.PI * (ms + 19000)) / 60000);
+        const el = 33 + 1.5 * Math.sin((2 * Math.PI * (ms + 1000)) / 90000);
+        const d = idleDistance(getAspect(sizes.width, sizes.height));
+        this.position
+            .copy(dirFromAngles(az, el))
+            .multiplyScalar(d)
+            .add(this.target);
+        this.focalPoint.copy(this.target);
+    }
+}
+
+export class BrightDeskKeyframe extends CameraKeyframeInstance {
+    application: Application;
+    base = new THREE.Vector3(420, 950, -1250);
+    targetFoc = new THREE.Vector3();
+    targetPos = new THREE.Vector3();
+
+    constructor() {
+        super(mk());
+        this.application = new Application();
+        this.targetFoc.copy(this.base);
+        this.targetPos.copy(this.base);
+        this.update();
+    }
+
+    update() {
+        const { sizes, mouse } = this.application;
+        // Mouse starts at 0 before the first mousemove: treat as centred
+        const nx = mouse.x === 0 ? 0 : clamp(mouse.x / sizes.width - 0.5, -0.5, 0.5);
+        const ny = mouse.y === 0 ? 0 : clamp(mouse.y / sizes.height - 0.5, -0.5, 0.5);
+        const d = deskDistance(getAspect(sizes.width, sizes.height));
+        const basePos = dirFromAngles(14, 22).multiplyScalar(d).add(this.base);
+
+        this.targetFoc.x += (this.base.x + 500 * nx - this.targetFoc.x) * 0.05;
+        this.targetFoc.y += (this.base.y - 300 * ny - this.targetFoc.y) * 0.05;
+        this.targetFoc.z = this.base.z;
+        this.targetPos.x += (basePos.x + 400 * nx - this.targetPos.x) * 0.025;
+        this.targetPos.y += (basePos.y - 250 * ny - this.targetPos.y) * 0.025;
+        this.targetPos.z = basePos.z;
+
+        this.focalPoint.copy(this.targetFoc);
+        this.position.copy(this.targetPos);
+    }
+}
+
+export class BrightMonitorKeyframe extends CameraKeyframeInstance {
+    application: Application;
+    screen = computeScreen();
+
+    constructor() {
+        super(mk());
+        this.application = new Application();
+        this.update();
+    }
+
+    update() {
+        const { sizes } = this.application;
+        const d = monitorDistance(getAspect(sizes.width, sizes.height));
+        this.position
+            .copy(this.screen.normal)
+            .multiplyScalar(d)
+            .add(this.screen.position);
+        this.focalPoint.copy(this.screen.position);
+    }
+}
+
+const staticKey = (az: number, el: number, d: number, target: THREE.Vector3) => {
+    const k = mk();
+    k.focalPoint.copy(target);
+    k.position.copy(dirFromAngles(az, el)).multiplyScalar(d).add(target);
+    return new CameraKeyframeInstance(k);
+};
+
+export const createKeyframes = (): { [key in CameraKey]: CameraKeyframeInstance } =>
+    isBright
+        ? {
+              idle: new BrightIdleKeyframe(),
+              monitor: new BrightMonitorKeyframe(),
+              loading: staticKey(50, 40, 14000, new THREE.Vector3(0, 400, -400)),
+              desk: new BrightDeskKeyframe(),
+              orbitControlsStart: staticKey(
+                  38,
+                  33,
+                  6000,
+                  new THREE.Vector3(0, 800, -700)
+              ),
+          }
+        : {
+              idle: new IdleKeyframe(),
+              monitor: new MonitorKeyframe(),
+              loading: new LoadingKeyframe(),
+              desk: new DeskKeyframe(),
+              orbitControlsStart: new OrbitControlsStart(),
+          };
+
+export const ORBIT_LIMITS = isBright
+    ? {
+          minDistance: 1500,
+          maxDistance: 9000,
+          maxPolarAngle: Math.PI / 2,
+          minPolarAngle: 0.35,
+          minAzimuthAngle: -10 * DEG,
+          maxAzimuthAngle: 85 * DEG,
+      }
+    : {
+          minDistance: 4000,
+          maxDistance: 29000,
+          maxPolarAngle: Math.PI / 2,
+          minPolarAngle: 0,
+          minAzimuthAngle: -Infinity,
+          maxAzimuthAngle: Infinity,
+      };

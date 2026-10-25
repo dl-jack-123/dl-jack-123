@@ -1,0 +1,51 @@
+[
+  {
+    "id": "kenney-furniture-kit",
+    "title": "Furniture Kit (selected pieces)",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sourceUrl": "https://kenney.nl/assets/furniture-kit",
+    "files": [
+      "kenney-furniture-kit/books.glb",
+      "kenney-furniture-kit/cardboardBoxClosed.glb",
+      "kenney-furniture-kit/chairDesk.glb",
+      "kenney-furniture-kit/computerKeyboard.glb",
+      "kenney-furniture-kit/computerMouse.glb",
+      "kenney-furniture-kit/computerScreen.glb",
+      "kenney-furniture-kit/laptop.glb",
+      "kenney-furniture-kit/SOURCE.txt"
+    ]
+  },
+  {
+    "id": "kaykit-furniture-bits",
+    "title": "KayKit: Furniture Bits (free version, picture frame)",
+    "author": "Kay Lousberg (www.kaylousberg.com)",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
+    "sourceUrl": "https://kaylousberg.itch.io/furniture-bits",
+    "files": [
+      "kaykit-furniture-bits/pictureframe_small_A.gltf",
+      "kaykit-furniture-bits/pictureframe_small_A.bin",
+      "kaykit-furniture-bits/furniturebits_texture.png",
+      "kaykit-furniture-bits/LICENSE.txt",
+      "kaykit-furniture-bits/SOURCE.txt"
+    ]
+  },
+  {
+    "id": "polyhaven-potted_plant_04",
+    "title": "Potted Plant 04",
+    "author": "James Ray Cock",
+    "license": "CC0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "sourceUrl": "https://polyhaven.com/a/potted_plant_04",
+    "files": [
+      "polyhaven-potted_plant_04/potted_plant_04_1k.gltf",
+      "polyhaven-potted_plant_04/potted_plant_04.bin",
+      "polyhaven-potted_plant_04/textures/potted_plant_04_arm_1k.jpg",
+      "polyhaven-potted_plant_04/textures/potted_plant_04_diff_1k.jpg",
+      "polyhaven-potted_plant_04/textures/potted_plant_04_nor_gl_1k.jpg",
+      "polyhaven-potted_plant_04/SOURCE.txt"
+    ]
+  }
+]

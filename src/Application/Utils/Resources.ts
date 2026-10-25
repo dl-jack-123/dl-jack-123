@@ -55,21 +55,35 @@ export default class Resources extends EventEmitter {
             if (source.type === 'gltfModel') {
                 this.loaders.gltfLoader.load(source.path, (file) => {
                     this.sourceLoaded(source, file);
-                });
+                }, undefined, () => this.sourceFailed(source));
             } else if (source.type === 'texture') {
                 this.loaders.textureLoader.load(source.path, (file) => {
                     file.encoding = THREE.sRGBEncoding;
                     this.sourceLoaded(source, file);
-                });
+                }, undefined, () => this.sourceFailed(source));
             } else if (source.type === 'cubeTexture') {
                 this.loaders.cubeTextureLoader.load(source.path, (file) => {
                     this.sourceLoaded(source, file);
-                });
+                }, undefined, () => this.sourceFailed(source));
             } else if (source.type === 'audio') {
                 this.loaders.audioLoader.load(source.path, (buffer) => {
                     this.sourceLoaded(source, buffer);
-                });
+                }, undefined, () => this.sourceFailed(source));
             }
+        }
+    }
+
+    // A missing asset must not block the loading screen forever.
+    sourceFailed(source: Resource) {
+        console.error('[resources] failed to load', source.name, source.path);
+        this.loaded++;
+        this.loading.trigger('loadedSource', [
+            source.name,
+            this.loaded,
+            this.toLoad,
+        ]);
+        if (this.loaded === this.toLoad) {
+            this.trigger('ready');
         }
     }
 
