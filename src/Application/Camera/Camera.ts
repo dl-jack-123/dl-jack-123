@@ -67,9 +67,15 @@ export default class Camera extends EventEmitter {
         };
 
         document.addEventListener('mousedown', (event) => {
-            event.preventDefault();
-            // @ts-ignore
-            if (event.target.id === 'prevent-click') return;
+            const target = event.target as HTMLElement;
+            // Native form controls (e.g. the music <select>) need the default
+            // mousedown behaviour to open, so don't cancel it for them.
+            const isFormControl =
+                target instanceof HTMLSelectElement ||
+                target instanceof HTMLInputElement ||
+                target instanceof HTMLOptionElement;
+            if (!isFormControl) event.preventDefault();
+            if (target.id === 'prevent-click') return;
             // print target and current keyframe
             if (
                 this.currentKeyframe === CameraKey.IDLE ||
