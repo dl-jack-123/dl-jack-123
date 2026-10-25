@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import UIEventBus from '../EventBus';
-import InfoOverlay from './InfoOverlay';
 import { isBright } from '../../roomMode';
 import { modelCreditsLine } from '../../World/roomCredits';
 
@@ -66,7 +65,6 @@ const InterfaceUI: React.FC<InterfaceUIProps> = ({}) => {
                 className="interface-wrapper"
                 id="prevent-click"
             >
-                <InfoOverlay visible={visible} />
             </motion.div>
             <div style={isBright ? styles.creditsBright : styles.credits}>
                 <p style={styles.creditLine}>

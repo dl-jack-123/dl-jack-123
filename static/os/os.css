@@ -131,3 +131,39 @@ html, body {
 }
 #start-menu button { display: block; width: 100%; border: 0; padding: 8px 10px; font-weight: 400; background: transparent; }
 #start-menu button:hover, #start-menu button:focus-visible { background: #e9eefc; }
+
+/* ---- Workstation ---- */
+.win.ws .body { padding: 0; display: flex; flex-direction: column; user-select: none; }
+.wsbar { display: flex; align-items: center; gap: 4px; padding: 8px 12px; border-bottom: 1px solid var(--line); background: var(--bar); }
+.wsbar [role=tab] { all: unset; cursor: pointer; padding: 5px 14px; border-radius: 6px; font-weight: 600; color: var(--muted); }
+.wsbar [role=tab]:hover { background: #e3e8f2; }
+.wsbar [role=tab][aria-selected=true] { background: var(--paper); color: var(--ink); box-shadow: inset 0 -2px 0 #2fb58f; }
+.wsbar [role=tab]:focus-visible { outline: 2px solid var(--accent); }
+.wsnote { margin-left: auto; font-size: 12px; color: var(--muted); border: 1px dashed var(--line); border-radius: 999px; padding: 2px 10px; }
+.wspanel { flex: 1; min-height: 0; padding: 14px 18px; overflow: auto; opacity: 0; transition: opacity .25s ease; }
+.wspanel.on { opacity: 1; }
+.wsfoot { display: flex; gap: 8px; padding: 8px 12px; border-top: 1px solid var(--line); background: var(--bar); }
+.wsfoot button { all: unset; cursor: pointer; padding: 4px 14px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); font-size: 13px; }
+.wsfoot button:hover { border-color: var(--accent); }
+.wsfoot button:focus-visible { outline: 2px solid var(--accent); }
+.code { display: flex; background: #20242b; color: #e6e9ee; border-radius: 8px; padding: 12px 0; font: 13px/1.55 "Cascadia Mono", Consolas, "Courier New", monospace; overflow: auto; }
+.code pre { margin: 0; font: inherit; }
+.code .ln { padding: 0 12px; text-align: right; color: #6b7482; user-select: none; }
+.code .src { padding-right: 16px; white-space: pre; }
+.t-c { color: #8b94a3; font-style: italic; } .t-s { color: #8fd9b6; } .t-d { color: #e5c07b; }
+.t-k { color: #7fb6ff; } .t-n { color: #f0a48a; }
+.wspanel svg { width: 100%; height: auto; max-height: 100%; }
+.cluster { fill: rgba(84, 214, 178, .06); stroke: #2fb58f; stroke-dasharray: 5 4; }
+.cl { font-size: 12px; fill: var(--muted); }
+.nd rect { fill: var(--paper); stroke: var(--line); stroke-width: 1.5; }
+.nd.acc rect { stroke: #2fb58f; }
+.nl { font-size: 13px; font-weight: 600; fill: var(--ink); } .ns { font-size: 11px; fill: var(--muted); }
+.ar { stroke: #5d6675; stroke-width: 1.5; } .ah { fill: #5d6675; }
+.mon { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+.card h4 { margin: 0 0 8px; font-size: 13px; }
+.spark { width: 100%; height: 90px; } .spark polyline { fill: none; stroke: #2fb58f; stroke-width: 2; }
+.svc { list-style: none; margin: 0; padding: 0; } .win .svc { padding: 0; }
+.svc li { display: grid; grid-template-columns: 14px 1fr auto auto; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: #2fb58f; } .dot.warn { background: #d99a1c; }
+@media (prefers-reduced-motion: reduce) { .wspanel { transition: none; } }

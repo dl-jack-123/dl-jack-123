@@ -1,0 +1,38 @@
+{
+  "name": "DL.Chiu",
+  "role": "Backend & Data Engineer",
+  "brand": "把複雜的系統問題，轉化成穩定、可維護、能持續交付的工程方案。",
+  "tagline": "A great product starts with a single line of code, but it's the deployment that makes it real.",
+  "summary": "Python developer focused on backend services, data pipelines and automated trading tools. I like shipping things end to end: code, containers, CI and monitoring.",
+  "tags": ["Python", "Django", "FastAPI", "Docker", "Kubernetes", "Airflow", "CI/CD", "AI Applications"],
+  "statsDate": "25 Oct 2026",
+  "stats": [
+    { "label": "Code time", "value": "664 hrs" },
+    { "label": "Lines written", "value": "508K+" },
+    { "label": "Public repos", "value": "14" },
+    { "label": "Contributions in 2026", "value": "1,187" },
+    { "label": "Commits in the evening", "value": "57%" }
+  ],
+  "skills": {
+    "Languages": ["Python", "Markdown"],
+    "Web": ["Django", "Flask", "FastAPI", "HTML", "CSS", "JavaScript"],
+    "Database": ["SQL Server", "PostgreSQL", "MySQL", "SQLite"],
+    "Deploy & Cloud": ["Docker", "Kubernetes", "GitHub Actions"],
+    "Data & Tools": ["NumPy", "Pandas", "Apache Airflow", "Streamlit", "PyQt5"],
+    "TradeBot": ["Capital (群益)", "Shioaji (永豐)"],
+    "Studying": ["React", "Grafana", "Azure", "GCP", "AWS"]
+  },
+  "projects": [
+    { "title": "AI Role Talk (Telegram bot)", "desc": "Role-play chat channel built on Google Gemini.", "url": "https://github.com/dl-jack-123/AIRole_TgBot", "tech": "Python, Telegram, Gemini" },
+    { "title": "LLM + RAG Learning", "desc": "Notes and experiments on retrieval-augmented generation.", "url": "https://github.com/dl-jack-123/llm_rag", "tech": "Python, Gemini" },
+    { "title": "ETL with Airflow", "desc": "Scheduled data pipelines.", "url": "https://github.com/dl-jack-123/Airflow/tree/main", "tech": "Python, Airflow, Celery, PostgreSQL" },
+    { "title": "Streamlit Dashboard", "desc": "Live dashboard.", "url": "https://dashboard-jd.streamlit.app/", "tech": "Python, Streamlit" },
+    { "title": "MCP Server: Airbnb + Cursor IDE", "desc": "Write-up on connecting an MCP server to Cursor.", "url": "https://medium.com/@jick1550443/mcp-server-airbnb-cursor-ide-3a405356d4f9", "tech": "MCP" },
+    { "title": "GitHub profile page", "desc": "The README you came from, with auto-updated stats.", "url": "https://github.com/dl-jack-123/dl-jack-123", "tech": "GitHub Actions, WakaTime" }
+  ],
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/dl-jack-123" },
+    { "label": "Medium", "url": "https://medium.com/@jick1550443" },
+    { "label": "LeetCode", "url": "https://leetcode.com/u/jick155/" }
+  ]
+}

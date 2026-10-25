@@ -2,42 +2,7 @@
 (function () {
   'use strict';
 
-  var PROFILE = {
-    name: 'DL.Chiu',
-    role: 'Backend & Data Engineer',
-    tagline: "A great product starts with a single line of code, but it's the deployment that makes it real.",
-    summary: 'Python developer focused on backend services, data pipelines and automated trading tools. I like shipping things end to end: code, containers, CI and monitoring.',
-    // Snapshot copied from the WakaTime block of the profile README (25 Oct 2026).
-    stats: [
-      'Code time: 664 hrs',
-      'Lines written: 508K+',
-      'Public repos: 14',
-      'Contributions in 2026: 1,187',
-      'Night owl: 57% of commits in the evening'
-    ],
-    skills: {
-      'Languages': ['Python', 'Markdown'],
-      'Web': ['Django', 'Flask', 'FastAPI', 'HTML', 'CSS', 'JavaScript'],
-      'Database': ['SQL Server', 'PostgreSQL', 'MySQL', 'SQLite'],
-      'Deploy & Cloud': ['Docker', 'Kubernetes', 'GitHub Actions'],
-      'Data & Tools': ['NumPy', 'Pandas', 'Apache Airflow', 'Streamlit', 'PyQt5'],
-      'TradeBot': ['Capital (群益)', 'Shioaji (永豐)'],
-      'Studying': ['React', 'Grafana', 'Azure', 'GCP', 'AWS']
-    },
-    projects: [
-      { title: 'AI Role Talk (Telegram bot)', desc: 'Role-play chat channel built on Google Gemini.', url: 'https://github.com/dl-jack-123/AIRole_TgBot', tech: 'Python, Telegram, Gemini' },
-      { title: 'LLM + RAG Learning', desc: 'Notes and experiments on retrieval-augmented generation.', url: 'https://github.com/dl-jack-123/llm_rag', tech: 'Python, Gemini' },
-      { title: 'ETL with Airflow', desc: 'Scheduled data pipelines.', url: 'https://github.com/dl-jack-123/Airflow/tree/main', tech: 'Python, Airflow, Celery, PostgreSQL' },
-      { title: 'Streamlit Dashboard', desc: 'Live dashboard.', url: 'https://dashboard-jd.streamlit.app/', tech: 'Python, Streamlit' },
-      { title: 'MCP Server: Airbnb + Cursor IDE', desc: 'Write-up on connecting an MCP server to Cursor.', url: 'https://medium.com/@jick1550443/mcp-server-airbnb-cursor-ide-3a405356d4f9', tech: 'MCP' },
-      { title: 'GitHub profile page', desc: 'The README you came from, with auto-updated stats.', url: 'https://github.com/dl-jack-123/dl-jack-123', tech: 'GitHub Actions, WakaTime' }
-    ],
-    links: [
-      { label: 'GitHub', url: 'https://github.com/dl-jack-123' },
-      { label: 'Medium', url: 'https://medium.com/@jick1550443' },
-      { label: 'LeetCode', url: 'https://leetcode.com/u/jick155/' }
-    ]
-  };
+  var PROFILE = null; // loaded from profile.json before the desktop is built
 
   // ---------- helpers ----------
   function esc(s) {
@@ -52,6 +17,11 @@
 
   // ---------- app content ----------
   var APPS = {
+    workstation: {
+      title: 'Workstation', glyph: '🖥', w: 860, h: 520, cls: 'ws',
+      render: renderWorkstation,
+      mount: mountWorkstation
+    },
     about: {
       title: 'About Me', glyph: '👤', w: 720, h: 500,
       render: function () {
@@ -60,7 +30,7 @@
           '<p class="tagline">' + esc(PROFILE.tagline) + '</p>' +
           '<p>' + esc(PROFILE.summary) + '</p>' +
           '<div class="links">' + PROFILE.links.map(function (l) { return link(l.url, l.label); }).join('') + '</div>' +
-          '<p class="stats">' + PROFILE.stats.map(esc).join(' · ') + '<br>Snapshot from my GitHub profile, 25 Oct 2026.</p></div>';
+          '<p class="stats">' + PROFILE.stats.map(function (x) { return esc(x.label + ': ' + x.value); }).join(' · ') + '<br>Snapshot from my GitHub profile, ' + esc(PROFILE.statsDate) + '.</p></div>';
       }
     },
     skills: {
@@ -121,8 +91,8 @@
     el.setAttribute('aria-label', app.title);
     el.style.width = app.w + 'px';
     el.style.height = app.h + 'px';
-    el.style.left = 120 + offset + 'px';
-    el.style.top = 40 + offset + 'px';
+    el.style.left = (id === 'workstation' ? 40 : 260 + offset) + 'px';
+    el.style.top = (id === 'workstation' ? 24 : 60 + offset) + 'px';
     offset = (offset + 28) % 140;
     el.innerHTML = '<div class="bar"><span>' + esc(app.glyph + ' ' + app.title) +
       '</span><button type="button" aria-label="Close">×</button></div><div class="body">' + app.render() + '</div>';
@@ -250,9 +220,33 @@
     });
   }
 
+  function init() {
   buildDesktop();
   tick();
   setInterval(tick, 30000);
   bridge();
-  openApp('about');
+  openApp('workstation');
+  }
+
+  // Escape inside the iframe can't reach the parent's key handler, so forward it.
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && window.parent !== window) {
+      window.parent.postMessage({ type: 'dlos-escape' }, window.location.origin === 'null' ? '*' : window.location.origin);
+    }
+  });
+  document.addEventListener('dlos:open', function (e) { if (APPS[e.detail] && PROFILE) openApp(e.detail); });
+
+  // The parent page (React nav) asks DL-OS to open an app. Same-origin only.
+  window.addEventListener('message', function (e) {
+    if (e.origin !== window.location.origin && window.location.origin !== 'null') return;
+    var d = e.data;
+    if (d && d.type === 'dlos-open' && APPS[d.app] && PROFILE) openApp(d.app);
+  });
+
+  fetch('profile.json').then(function (r) { return r.json(); }).then(function (data) {
+    PROFILE = data;
+    init();
+  }).catch(function () {
+    document.body.textContent = 'Could not load profile.json';
+  });
 })();

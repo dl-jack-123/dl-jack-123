@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import LoadingScreen from './components/LoadingScreen';
 import HelpPrompt from './components/HelpPrompt';
 import InterfaceUI from './components/InterfaceUI';
+import ProUI from './pro/ProUI';
 import eventBus from './EventBus';
 import './style.css';
 
@@ -31,4 +32,7 @@ const createVolumeUI = () => {
     ReactDOM.render(<InterfaceUI />, document.getElementById('ui-interactive'));
 };
 
-export { createUI, createVolumeUI };
+const createProUI = () => {
+    ReactDOM.render(<ProUI />, document.getElementById('ui-pro'));
+};
+export { createUI, createVolumeUI, createProUI };

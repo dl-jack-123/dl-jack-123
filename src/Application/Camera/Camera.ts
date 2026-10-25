@@ -144,6 +144,9 @@ export default class Camera extends EventEmitter {
             this.transition(CameraKey.DESK);
             UIEventBus.dispatch('leftMonitor', {});
         });
+        // Programmatic entry points used by the navigation UI (no mouse hover needed)
+        UIEventBus.on('focusMonitor', () => this.trigger('enterMonitor'));
+        UIEventBus.on('unfocusMonitor', () => this.trigger('leftMonitor'));
     }
 
     setFreeCamListeners() {
