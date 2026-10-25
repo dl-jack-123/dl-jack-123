@@ -155,8 +155,8 @@ export default class BrightRoom {
     // ---------- shell ----------
 
     buildShell() {
-        const wallBack = std(0xeeeae2, 1);
-        const wallLeft = std(0xe9e4da, 1);
+        const wallBack = std(0xe4e5e6, 1);
+        const wallLeft = std(0xdcdee0, 1);
         const frameMat = std(0xf7f4ee, 0.8);
 
         // Floor
@@ -167,7 +167,7 @@ export default class BrightRoom {
             0,
             -1.72,
             1.2,
-            std(0xd8ccb6, 0.9),
+            std(0xcfccc5, 0.9),
             false,
             true
         );
@@ -192,7 +192,7 @@ export default class BrightRoom {
         const sky = new THREE.Mesh(
             new THREE.PlaneGeometry(2.3, 1.7),
             new THREE.MeshBasicMaterial({
-                color: srgb(0xfff8e8),
+                color: srgb(0xf4f7fa),
                 side: THREE.DoubleSide,
                 toneMapped: false,
             })
@@ -202,8 +202,8 @@ export default class BrightRoom {
         this.root.add(sky);
 
         // Cream roller blind, half lowered
-        const blind = std(0xece0c8, 1, {
-            emissive: srgb(0xffe6b8),
+        const blind = std(0xe8e4da, 1, {
+            emissive: srgb(0xfff4e0),
             emissiveIntensity: 0.35,
         });
         this.box(-1.99, -1.97, 1.5, 2.1, -1.3, 0.2, blind, true, false);
@@ -401,16 +401,7 @@ export default class BrightRoom {
             return this.place(m, pos, yaw, s);
         };
 
-        this.chair = place(
-            'roomChair',
-            {
-                carpet: { color: 0x8b9096, rough: 0.95 },
-                metalMedium: { color: 0x2e3236, rough: 0.5 },
-            },
-            [0.42, 0, -0.4],
-            200,
-            1.9
-        );
+        this.chair = this.buildMeshChair();
         place(
             'roomKeyboard',
             {
@@ -436,16 +427,12 @@ export default class BrightRoom {
                 plant: { color: 0x5f8f74 },
                 metal: { color: 0x6f8aa8 },
             },
-            [0, top, -1.45],
+            [0.04, top, -1.45],
             8,
             1.0
         );
-        const boxColours: ColourMap = {
-            wood: { color: 0xe7e1d6 },
-            woodDark: { color: 0xb9b2a3 },
-        };
-        place('roomBox', boxColours, [-0.395, top, -1.43], 6, 0.85);
-        place('roomBox', boxColours, [-0.19, top, -1.43], -4, 0.85);
+        this.buildBookFile(-0.38, top, -1.42, 4);
+        this.buildBookFile(-0.17, top, -1.42, -3);
 
         const frame = this.getModel('roomFrame');
         if (frame) {
@@ -459,17 +446,194 @@ export default class BrightRoom {
         }
     }
 
+    // ---------- procedural props ----------
+
+    /** Perforated "mesh" look: white = opaque, black = hole (used as alphaMap). */
+    meshAlphaTexture() {
+        const size = 64;
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = size;
+        const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, size, size);
+        ctx.fillStyle = '#000';
+        // staggered diamond holes
+        for (const [cx, cy] of [
+            [16, 16],
+            [48, 16],
+            [16, 48],
+            [48, 48],
+            [32, 32],
+            [0, 32],
+            [64, 32],
+            [32, 0],
+            [32, 64],
+        ]) {
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - 10);
+            ctx.lineTo(cx + 10, cy);
+            ctx.lineTo(cx, cy + 10);
+            ctx.lineTo(cx - 10, cy);
+            ctx.closePath();
+            ctx.fill();
+        }
+        const tex = new THREE.CanvasTexture(canvas);
+        tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+        return tex;
+    }
+
+    /**
+     * Grey mesh-back office chair, built from primitives. Faces -z (towards the
+     * desk); the backrest is on the +z side, toward the camera.
+     */
+    buildMeshChair() {
+        const black = std(0x1f2124, 0.5);
+        const fabric = std(0x7b8087, 0.95);
+        const g = new THREE.Group();
+        const add = (m: THREE.Object3D, cast = true) => {
+            m.traverse((c) => {
+                if (c instanceof THREE.Mesh) {
+                    c.castShadow = cast;
+                    c.receiveShadow = true;
+                }
+            });
+            g.add(m);
+            return m;
+        };
+        const cyl = (r0: number, r1: number, h: number, y: number, mat: THREE.Material) => {
+            const m = new THREE.Mesh(new THREE.CylinderGeometry(r0, r1, h, 20), mat);
+            m.position.y = y;
+            return m;
+        };
+        const cube = (
+            w: number,
+            h: number,
+            d: number,
+            x: number,
+            y: number,
+            z: number,
+            mat: THREE.Material
+        ) => {
+            const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
+            m.position.set(x, y, z);
+            return m;
+        };
+
+        // Five-star base with casters, gas column
+        for (let i = 0; i < 5; i++) {
+            const arm = new THREE.Group();
+            arm.rotation.y = ((i * 72 + 18) * Math.PI) / 180;
+            const leg = cube(0.3, 0.032, 0.05, 0.15, 0.075, 0, black);
+            arm.add(leg);
+            const wheel = new THREE.Mesh(new THREE.SphereGeometry(0.03, 12, 10), black);
+            wheel.position.set(0.3, 0.03, 0);
+            arm.add(wheel);
+            add(arm);
+        }
+        add(cyl(0.05, 0.06, 0.05, 0.085, black));
+        add(cyl(0.024, 0.024, 0.3, 0.26, black));
+
+        // Seat
+        add(cube(0.5, 0.04, 0.48, 0, 0.44, 0, black));
+        add(cube(0.5, 0.07, 0.48, 0, 0.495, 0, fabric));
+
+        // Backrest: black frame + perforated mesh panel, slightly reclined
+        const back = new THREE.Group();
+        back.position.set(0, 0.53, 0.22);
+        back.rotation.x = 8 * DEG;
+        const bw = 0.46;
+        const bh = 0.52;
+        const frameT = 0.03;
+        back.add(cube(frameT, bh, 0.03, -bw / 2, bh / 2, 0, black));
+        back.add(cube(frameT, bh, 0.03, bw / 2, bh / 2, 0, black));
+        back.add(cube(bw + frameT, frameT, 0.03, 0, bh, 0, black));
+        back.add(cube(bw + frameT, frameT, 0.03, 0, 0, 0, black));
+        const alpha = this.meshAlphaTexture();
+        alpha.repeat.set(bw / 0.02, bh / 0.02);
+        const panel = new THREE.Mesh(
+            new THREE.PlaneGeometry(bw, bh),
+            new THREE.MeshStandardMaterial({
+                color: srgb(0x6c7178),
+                roughness: 0.9,
+                metalness: 0,
+                alphaMap: alpha,
+                alphaTest: 0.5,
+                side: THREE.DoubleSide,
+            })
+        );
+        panel.position.set(0, bh / 2, 0);
+        back.add(panel);
+        // Uprights to the seat and headrest
+        back.add(cube(0.03, 0.14, 0.03, 0, -0.06, -0.02, black));
+        back.add(cube(0.02, 0.1, 0.02, 0, bh + 0.05, 0, black));
+        back.add(cube(0.22, 0.09, 0.05, 0, bh + 0.13, 0, fabric));
+        add(back);
+
+        // Armrests
+        for (const x of [-0.27, 0.27]) {
+            add(cube(0.03, 0.2, 0.03, x, 0.58, 0.02, black));
+            add(cube(0.06, 0.03, 0.26, x, 0.69, -0.02, black));
+        }
+
+        // Same pose as before: in front of the desk, facing it.
+        g.position.set(0.42, 0, -0.4);
+        this.root.add(g);
+        return g;
+    }
+
+    /** Magazine file filled with book spines (spines face +z, towards the camera). */
+    buildBookFile(x: number, y: number, z: number, yawDeg: number) {
+        const holder = new THREE.Group();
+        holder.position.set(x, y, z);
+        holder.rotation.y = yawDeg * DEG;
+        const cream = std(0xe9e6df, 0.85);
+        const w = 0.19;
+        const d = 0.2;
+        const h = 0.16;
+        const t = 0.006;
+        const mk = (
+            sx: number,
+            sy: number,
+            sz: number,
+            px: number,
+            py: number,
+            pz: number,
+            mat: THREE.Material
+        ) => {
+            const m = new THREE.Mesh(new THREE.BoxGeometry(sx, sy, sz), mat);
+            m.position.set(px, py, pz);
+            m.castShadow = m.receiveShadow = true;
+            holder.add(m);
+        };
+        mk(w, t, d, 0, t / 2, 0, cream); // floor
+        mk(t, h, d, -w / 2, h / 2, 0, cream); // sides
+        mk(t, h, d, w / 2, h / 2, 0, cream);
+        mk(w, h, t, 0, h / 2, -d / 2, cream); // back
+        mk(w, h * 0.55, t, 0, (h * 0.55) / 2, d / 2, cream); // low front
+        const palette = [0x6f8aa8, 0xb8715b, 0x7e9a86, 0xd0b46a, 0x4e5663, 0xc9c3b6, 0x8a7aa0];
+        const heights = [0.2, 0.23, 0.19, 0.24, 0.21, 0.22, 0.18];
+        let px = -w / 2 + 0.018;
+        for (let i = 0; i < 7; i++) {
+            const bt = 0.02 + (i % 3) * 0.003;
+            if (px + bt > w / 2 - 0.008) break;
+            mk(bt, heights[i], d - 0.04, px + bt / 2, heights[i] / 2 + t, 0.01, std(palette[i], 0.8));
+            px += bt + 0.002;
+        }
+        this.root.add(holder);
+        return holder;
+    }
+
     // ---------- lights ----------
 
     buildLights() {
         const hemi = new THREE.HemisphereLight(
-            srgb(0xfffaf0),
-            srgb(0xd8cfc0),
+            srgb(0xfafcff),
+            srgb(0xcfd0d0),
             0.95
         );
         this.scene.add(hemi);
 
-        const sun = new THREE.DirectionalLight(srgb(0xfff1dc), 0.85);
+        const sun = new THREE.DirectionalLight(srgb(0xfff7ec), 0.85);
         const dir = new THREE.Vector3(0.767, -0.598, -0.23);
         const target = new THREE.Vector3(300, 800, -800);
         sun.position.copy(target).addScaledVector(dir, -9000);

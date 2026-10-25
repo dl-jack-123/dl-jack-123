@@ -1,12 +1,12 @@
 /* DL-OS: light, minimal desktop shown on the 3D monitor. */
 :root {
-  --bg: #eee8d8;
-  --paper: #fffdf8;
+  --bg: #c9d4e2;
+  --paper: #fbfcfe;
   --ink: #26241f;
-  --muted: #6d675a;
-  --line: #d9d2bf;
+  --muted: #5d6675;
+  --line: #cdd5e0;
   --accent: #3a56c4;
-  --bar: #f3eee0;
+  --bar: #eceff4;
   --font: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, "Segoe UI", sans-serif;
   --serif: "Noto Serif TC", "Songti TC", Georgia, "Times New Roman", serif;
 }
@@ -19,7 +19,7 @@ html, body {
   overflow: hidden;
   font: 15px/1.5 var(--font);
   color: var(--ink);
-  background: radial-gradient(circle at 30% 20%, #f6f1e3, var(--bg) 70%);
+  background: radial-gradient(circle at 30% 20%, #dfe7f1, var(--bg) 70%);
   user-select: none;
 }
 
@@ -60,7 +60,7 @@ html, body {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(60, 50, 20, .18);
+  box-shadow: 0 10px 30px rgba(30, 45, 70, .22);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -112,7 +112,7 @@ html, body {
 #taskbar {
   position: absolute; left: 0; right: 0; bottom: 0; height: 44px;
   display: flex; align-items: center; gap: 8px; padding: 6px 10px;
-  background: rgba(243, 238, 224, .92); border-top: 1px solid var(--line);
+  background: rgba(236, 239, 244, .94); border-top: 1px solid var(--line);
 }
 #taskbar button, #start-menu button {
   all: unset; cursor: pointer; padding: 5px 14px; font-weight: 600;
@@ -127,7 +127,7 @@ html, body {
 #start-menu {
   position: absolute; left: 10px; bottom: 50px; width: 220px; padding: 6px;
   background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(60, 50, 20, .2);
+  box-shadow: 0 10px 30px rgba(30, 45, 70, .24);
 }
 #start-menu button { display: block; width: 100%; border: 0; padding: 8px 10px; font-weight: 400; background: transparent; }
 #start-menu button:hover, #start-menu button:focus-visible { background: #e9eefc; }

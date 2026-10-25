@@ -124,13 +124,11 @@ const room = (name: string, path: string): Resource => ({
 });
 
 const brightSources: Resource[] = [
-    room('roomChair', 'kenney-furniture-kit/chairDesk.glb'),
     room('roomMonitor', 'kenney-furniture-kit/computerScreen.glb'),
     room('roomKeyboard', 'kenney-furniture-kit/computerKeyboard.glb'),
     room('roomMouse', 'kenney-furniture-kit/computerMouse.glb'),
     room('roomLaptop', 'kenney-furniture-kit/laptop.glb'),
     room('roomBooks', 'kenney-furniture-kit/books.glb'),
-    room('roomBox', 'kenney-furniture-kit/cardboardBoxClosed.glb'),
     room('roomFrame', 'kaykit-furniture-bits/pictureframe_small_A.gltf'),
     room('roomPlant', 'polyhaven-potted_plant_04/potted_plant_04_1k.gltf'),
 ];

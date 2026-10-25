@@ -8,8 +8,6 @@
     "sourceUrl": "https://kenney.nl/assets/furniture-kit",
     "files": [
       "kenney-furniture-kit/books.glb",
-      "kenney-furniture-kit/cardboardBoxClosed.glb",
-      "kenney-furniture-kit/chairDesk.glb",
       "kenney-furniture-kit/computerKeyboard.glb",
       "kenney-furniture-kit/computerMouse.glb",
       "kenney-furniture-kit/computerScreen.glb",
@@ -49,3 +47,4 @@
     ]
   }
 ]
+

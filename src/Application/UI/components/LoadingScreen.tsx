@@ -117,7 +117,7 @@ const FONT =
 
 const styles: StyleSheetCSS = {
     overlay: {
-        background: 'linear-gradient(#bdb8b0, #e8e5de)',
+        background: 'linear-gradient(#b8b9bb, #e5e6e7)',
         width: '100%',
         height: '100%',
         display: 'flex',

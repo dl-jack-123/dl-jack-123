@@ -102,7 +102,7 @@ export const brightMonitorConfig = (): MonitorConfig => {
         cssSize: s.cssSize,
         iframeSize: s.cssSize,
         iframePadding: 0,
-        containerBg: '#eee8d8',
+        containerBg: '#c9d4e2',
         innerShadow: false,
         enclosureDepth: 0,
         bezelColor: 0x2a2c2f,
