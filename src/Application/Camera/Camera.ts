@@ -59,6 +59,8 @@ export default class Camera extends EventEmitter {
 
         document.addEventListener('mousedown', (event) => {
             const target = event.target as HTMLElement;
+            // Clicks on the page HUD (nav, panels, toolbar) must not move the camera
+            if (target.closest && target.closest('.pro-root')) return;
             // Native form controls (e.g. the music <select>) need the default
             // mousedown behaviour to open, so don't cancel it for them.
             const isFormControl =

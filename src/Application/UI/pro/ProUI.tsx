@@ -4,6 +4,8 @@ import MuteToggle from '../components/MuteToggle';
 import FreeCamToggle from '../components/FreeCamToggle';
 import { MUSIC_OFF, MUSIC_TRACKS, loadMusicChoice } from '../../Audio/musicTracks';
 import { Profile, loadProfile } from './profile';
+import FloatingCards from './FloatingCards';
+import { Mood, MOOD_KEY, getMood } from '../../mood';
 import './pro.css';
 
 type SectionId = 'about' | 'projects' | 'stack' | 'engineering' | 'contact';
@@ -15,22 +17,6 @@ const SECTIONS: { id: SectionId; label: string }[] = [
     { id: 'engineering', label: 'Engineering' },
     { id: 'contact', label: 'Contact' },
 ];
-
-const THEME_KEY = 'dl-theme';
-type Theme = 'light' | 'dark';
-
-const initialTheme = (): Theme => {
-    try {
-        const stored = window.localStorage.getItem(THEME_KEY);
-        if (stored === 'light' || stored === 'dark') return stored;
-    } catch (e) {
-        // storage unavailable
-    }
-    return window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-};
 
 const openInMonitor = (app: string) => {
     UIEventBus.dispatch('focusMonitor', {});
@@ -149,7 +135,8 @@ const ProUI: React.FC = () => {
     const [profile, setProfile] = useState<Profile | null>(null);
     const [section, setSection] = useState<SectionId | null>(null);
     const [inMonitor, setInMonitor] = useState(false);
-    const [theme, setTheme] = useState<Theme>(initialTheme);
+    const [mood, setMood] = useState<Mood>(getMood);
+    const theme = mood === 'dusk' ? 'dark' : 'light';
     const [time, setTime] = useState('');
     const [audioOpen, setAudioOpen] = useState(false);
     const [muted, setMuted] = useState(false);
@@ -224,17 +211,17 @@ const ProUI: React.FC = () => {
         };
     }, [section, inMonitor, closeSection]);
 
-    const toggleTheme = () => {
-        const next: Theme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(next);
+    const toggleMood = () => {
+        const next: Mood = mood === 'dusk' ? 'day' : 'dusk';
+        setMood(next);
+        UIEventBus.dispatch('moodChange', next);
         // Saved only because the visitor explicitly chose it.
         try {
-            window.localStorage.setItem(THEME_KEY, next);
+            window.localStorage.setItem(MOOD_KEY, next);
         } catch (e) {
             // storage unavailable
         }
     };
-
     if (!ready) return null;
 
     const track = MUSIC_TRACKS.find((t) => t.id === music);
@@ -247,29 +234,84 @@ const ProUI: React.FC = () => {
 
     return (
         <div className="pro-root" data-theme={theme}>
+            <header className="pro-top">
+                <span className={'pro-logo' + (inMonitor ? ' pro-hidden' : '')}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                        <path d="M8 8v8h3a4 4 0 000-8H8z" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                    </svg>
+                    DL.Chiu
+                </span>
+                <nav
+                    className={'pro-nav' + (inMonitor ? ' pro-hidden' : '')}
+                    aria-label="Sections"
+                >
+                    {SECTIONS.map((s) => (
+                        <button
+                            key={s.id}
+                            type="button"
+                            aria-current={section === s.id ? 'true' : undefined}
+                            className={section === s.id ? 'on' : ''}
+                            onClick={() => openSection(s.id)}
+                        >
+                            {s.label}
+                        </button>
+                    ))}
+                </nav>
+                <div className="pro-toolbar" role="toolbar" aria-label="Page controls">
+                    {inMonitor && (
+                        <button
+                            type="button"
+                            className="pro-tool"
+                            onClick={() => UIEventBus.dispatch('unfocusMonitor', {})}
+                        >
+                            ← Back to room
+                        </button>
+                    )}
+                    <span className="pro-clock" aria-label="Local time">
+                        {time}
+                    </span>
+                    <button
+                        type="button"
+                        className="pro-tool"
+                        aria-expanded={audioOpen}
+                        aria-controls="pro-audio"
+                        onClick={() => setAudioOpen(!audioOpen)}
+                    >
+                        ♪ {audioStatus}
+                    </button>
+                    <button
+                        type="button"
+                        className="pro-tool"
+                        aria-label={
+                            mood === 'dusk'
+                                ? 'Switch to daylight'
+                                : 'Switch to dusk'
+                        }
+                        onClick={toggleMood}
+                    >
+                        {mood === 'dusk' ? '☾ Dusk' : '☀ Day'}
+                    </button>
+                    {/* Kept mounted so volume and track state survive collapsing */}
+                    <div
+                        id="pro-audio"
+                        className="pro-audio"
+                        hidden={!audioOpen}
+                        onMouseDown={(e) => e.stopPropagation()}
+                    >
+                        <MuteToggle />
+                        <FreeCamToggle />
+                    </div>
+                </div>
+            </header>
+
             {profile && (
                 <>
-                    <nav
-                        className={'pro-nav' + (inMonitor ? ' pro-hidden' : '')}
-                        aria-label="Sections"
-                    >
-                        {SECTIONS.map((s) => (
-                            <button
-                                key={s.id}
-                                type="button"
-                                aria-current={section === s.id ? 'true' : undefined}
-                                className={section === s.id ? 'on' : ''}
-                                onClick={() => openSection(s.id)}
-                            >
-                                {s.label}
-                            </button>
-                        ))}
-                    </nav>
-
                     <aside
                         className={'pro-panel' + (inMonitor ? ' pro-hidden' : '')}
                         aria-label="Profile"
                     >
+                        <p className="pro-eyebrow">Software Engineer</p>
                         <h1>{profile.name}</h1>
                         <p className="pro-role">{profile.role}</p>
                         <p className="pro-brand">{profile.brand}</p>
@@ -310,6 +352,13 @@ const ProUI: React.FC = () => {
                         </p>
                     </aside>
 
+                    <FloatingCards
+                        profile={profile}
+                        onPipeline={() => openInMonitor('workstation')}
+                        onInfra={() => openSection('stack')}
+                        onMetrics={() => openSection('engineering')}
+                    />
+
                     {section && (
                         <section
                             className="pro-drawer"
@@ -338,50 +387,9 @@ const ProUI: React.FC = () => {
                     )}
                 </>
             )}
-
-            <div className="pro-toolbar" role="toolbar" aria-label="Page controls">
-                {inMonitor && (
-                    <button
-                        type="button"
-                        className="pro-tool"
-                        onClick={() => UIEventBus.dispatch('unfocusMonitor', {})}
-                    >
-                        ← Back to room
-                    </button>
-                )}
-                <span className="pro-clock" aria-label="Local time">
-                    {time}
-                </span>
-                <button
-                    type="button"
-                    className="pro-tool"
-                    aria-expanded={audioOpen}
-                    aria-controls="pro-audio"
-                    onClick={() => setAudioOpen(!audioOpen)}
-                >
-                    ♪ {audioStatus}
-                </button>
-                <button
-                    type="button"
-                    className="pro-tool"
-                    aria-pressed={theme === 'dark'}
-                    onClick={toggleTheme}
-                >
-                    {theme === 'dark' ? 'Dark' : 'Light'}
-                </button>
-                {/* Kept mounted so volume and track state survive collapsing */}
-                <div
-                    id="pro-audio"
-                    className="pro-audio"
-                    hidden={!audioOpen}
-                    onMouseDown={(e) => e.stopPropagation()}
-                >
-                    <MuteToggle />
-                    <FreeCamToggle />
-                </div>
-            </div>
         </div>
     );
 };
+
 
 export default ProUI;

@@ -16,6 +16,7 @@ import {
     classicMonitorConfig,
 } from './roomLayout';
 import { CameraKey } from '../Camera/Camera';
+import { updateFloating } from '../UI/pro/floating';
 export default class World {
     application: Application;
     scene: THREE.Scene;
@@ -68,6 +69,15 @@ export default class World {
                     cam.currentKeyframe === CameraKey.MONITOR ||
                     cam.targetKeyframe === CameraKey.MONITOR
                 )
+            );
+            // Wall cards only make sense in the idle overview
+            updateFloating(
+                cam.instance,
+                this.application.sizes.width,
+                this.application.sizes.height,
+                cam.currentKeyframe === CameraKey.IDLE &&
+                    (!cam.targetKeyframe || cam.targetKeyframe === CameraKey.IDLE) &&
+                    !cam.freeCam
             );
         }
     }

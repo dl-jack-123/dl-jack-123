@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
-      background: linear-gradient(#b8b9bb, #e5e6e7) fixed;
+      background: linear-gradient(var(--bg-top, #b8b9bb), var(--bg-bottom, #e5e6e7)) fixed;
       margin: 0;
     }
 
@@ -16,7 +16,7 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: #f1f1ef;
+      background: var(--tint, #f1f1ef);
       mix-blend-mode: multiply;
       pointer-events: none;
       z-index: 2;

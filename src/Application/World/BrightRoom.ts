@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import Application from '../Application';
 import Resources from '../Utils/Resources';
+import UIEventBus from '../UI/EventBus';
+import { Mood, MOODS, getMood } from '../mood';
 import {
     UNITS_PER_METRE,
     MONITOR,
@@ -38,6 +40,12 @@ export default class BrightRoom {
     chair: THREE.Object3D | undefined;
     sun: THREE.DirectionalLight;
     floor: THREE.Mesh;
+    hemi: THREE.HemisphereLight;
+    sky: THREE.Mesh;
+    blind: THREE.Mesh;
+    blindBar: THREE.Mesh;
+    duskTexture: THREE.CanvasTexture | undefined;
+    mats: { [key: string]: THREE.MeshStandardMaterial } = {};
 
     constructor() {
         this.application = new Application();
@@ -52,6 +60,8 @@ export default class BrightRoom {
         this.buildDesk();
         this.buildProps();
         this.buildLights();
+        this.applyMood(getMood());
+        UIEventBus.on('moodChange', (m: Mood) => this.applyMood(m));
 
         if (new URLSearchParams(window.location.search).has('roomdebug')) {
             this.installDebugHook();
@@ -157,6 +167,10 @@ export default class BrightRoom {
     buildShell() {
         const wallBack = std(0xe4e5e6, 1);
         const wallLeft = std(0xdcdee0, 1);
+        const floorMat = std(0xcfccc5, 0.9);
+        this.mats.wallBack = wallBack;
+        this.mats.wallLeft = wallLeft;
+        this.mats.floor = floorMat;
         const frameMat = std(0xf7f4ee, 0.8);
 
         // Floor
@@ -167,7 +181,7 @@ export default class BrightRoom {
             0,
             -1.72,
             1.2,
-            std(0xcfccc5, 0.9),
+            floorMat,
             false,
             true
         );
@@ -200,13 +214,15 @@ export default class BrightRoom {
         sky.position.set(-2.22, 1.35, -0.55);
         sky.rotation.y = 90 * DEG;
         this.root.add(sky);
+        this.sky = sky;
 
         // Cream roller blind, half lowered
         const blind = std(0xe8e4da, 1, {
             emissive: srgb(0xfff4e0),
             emissiveIntensity: 0.35,
         });
-        this.box(-1.99, -1.97, 1.5, 2.1, -1.3, 0.2, blind, true, false);
+        this.mats.blind = blind;
+        this.blind = this.box(-1.99, -1.97, 1.5, 2.1, -1.3, 0.2, blind, true, false);
         const roller = new THREE.Mesh(
             new THREE.CylinderGeometry(0.035, 0.035, 1.56, 24),
             std(0xe4d9c1, 0.8)
@@ -221,17 +237,20 @@ export default class BrightRoom {
         );
         bar.rotation.x = 90 * DEG;
         bar.position.set(-1.98, 1.49, -0.55);
+        this.blindBar = bar;
         bar.castShadow = true;
         this.root.add(bar);
 
         // Rug (2 mm decal)
+        const rugMat = std(0xb4c0bb, 1, {
+            polygonOffset: true,
+            polygonOffsetFactor: -1,
+            polygonOffsetUnits: -1,
+        });
+        this.mats.rug = rugMat;
         const rug = new THREE.Mesh(
             new THREE.CylinderGeometry(0.95, 0.95, 0.002, 64),
-            std(0xb4c0bb, 1, {
-                polygonOffset: true,
-                polygonOffsetFactor: -1,
-                polygonOffsetUnits: -1,
-            })
+            rugMat
         );
         rug.position.set(0.35, 0.001, -0.65);
         rug.receiveShadow = true;
@@ -632,6 +651,7 @@ export default class BrightRoom {
             0.95
         );
         this.scene.add(hemi);
+        this.hemi = hemi;
 
         const sun = new THREE.DirectionalLight(srgb(0xfff7ec), 0.85);
         const dir = new THREE.Vector3(0.767, -0.598, -0.23);
@@ -652,6 +672,103 @@ export default class BrightRoom {
         this.scene.add(sun);
         this.scene.add(sun.target);
         this.sun = sun;
+    }
+
+    // ---------- mood ----------
+    /** Painted dusk view for the window (own artwork, generated procedurally). */
+    makeDuskTexture(): THREE.CanvasTexture {
+        const w = 1024;
+        const h = 768;
+        const canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+        const sky = ctx.createLinearGradient(0, 0, 0, h);
+        sky.addColorStop(0, '#4d5b8c');
+        sky.addColorStop(0.32, '#b98391');
+        sky.addColorStop(0.58, '#ffae66');
+        sky.addColorStop(0.8, '#ffd299');
+        sky.addColorStop(1, '#ffe6c0');
+        ctx.fillStyle = sky;
+        ctx.fillRect(0, 0, w, h);
+        const sx = w * 0.68;
+        const sy = h * 0.6;
+        const glow = ctx.createRadialGradient(sx, sy, 0, sx, sy, 260);
+        glow.addColorStop(0, 'rgba(255,245,215,0.95)');
+        glow.addColorStop(0.25, 'rgba(255,214,150,0.55)');
+        glow.addColorStop(1, 'rgba(255,190,120,0)');
+        ctx.fillStyle = glow;
+        ctx.fillRect(0, 0, w, h);
+        ctx.fillStyle = '#fff4dc';
+        ctx.beginPath();
+        ctx.arc(sx, sy, 34, 0, Math.PI * 2);
+        ctx.fill();
+        const ridge = (
+            base: number,
+            amp: number,
+            seed: number,
+            colour: string
+        ) => {
+            ctx.fillStyle = colour;
+            ctx.beginPath();
+            ctx.moveTo(0, h);
+            for (let x = 0; x <= w; x += 8) {
+                const t = x / w;
+                const y =
+                    h * base -
+                    amp *
+                        (0.55 * Math.sin(t * 5.1 + seed) +
+                            0.3 * Math.sin(t * 11.7 + seed * 2.3) +
+                            0.15 * Math.sin(t * 27.3 + seed * 4.1));
+                ctx.lineTo(x, y);
+            }
+            ctx.lineTo(w, h);
+            ctx.closePath();
+            ctx.fill();
+        };
+        ridge(0.7, 70, 1.2, 'rgba(158,122,140,0.85)');
+        ridge(0.8, 60, 3.4, 'rgba(112,84,104,0.92)');
+        ridge(0.9, 40, 5.7, '#4a3a4c');
+        const tex = new THREE.CanvasTexture(canvas);
+        tex.encoding = THREE.sRGBEncoding;
+        return tex;
+    }
+    applyMood(mood: Mood) {
+        const m = MOODS[mood];
+        this.hemi.color.copy(srgb(m.hemiSky));
+        this.hemi.groundColor.copy(srgb(m.hemiGround));
+        this.hemi.intensity = m.hemiIntensity;
+        this.sun.color.copy(srgb(m.sun));
+        this.sun.intensity = m.sunIntensity;
+        const dir = new THREE.Vector3(...m.sunDir);
+        const target = this.sun.target.position;
+        this.sun.position.copy(target).addScaledVector(dir, -9000);
+        this.mats.wallBack.color.copy(srgb(m.wallBack));
+        this.mats.wallLeft.color.copy(srgb(m.wallLeft));
+        this.mats.floor.color.copy(srgb(m.floor));
+        this.mats.rug.color.copy(srgb(m.rug));
+        this.mats.blind.color.copy(srgb(m.blind));
+        this.mats.blind.emissive.copy(srgb(m.blindEmissive));
+        this.mats.blind.emissiveIntensity = m.blindEmissiveIntensity;
+        // blind: top edge fixed at 2.1 m, bottom bar follows
+        this.blind.scale.y = m.blindHeight / 0.6;
+        this.blind.position.y = 2.1 - m.blindHeight / 2;
+        this.blindBar.position.y = 2.1 - m.blindHeight + 0.01;
+        const skyMat = this.sky.material as THREE.MeshBasicMaterial;
+        if (m.scenery) {
+            if (!this.duskTexture) this.duskTexture = this.makeDuskTexture();
+            skyMat.map = this.duskTexture;
+            skyMat.color.set(0xffffff);
+        } else {
+            skyMat.map = null;
+            skyMat.color.copy(srgb(m.skyFlat));
+        }
+        skyMat.needsUpdate = true;
+        const root = document.documentElement;
+        root.style.setProperty('--bg-top', m.bgTop);
+        root.style.setProperty('--bg-bottom', m.bgBottom);
+        root.style.setProperty('--tint', m.tint);
+        root.setAttribute('data-mood', mood);
     }
 
     // ---------- API ----------
