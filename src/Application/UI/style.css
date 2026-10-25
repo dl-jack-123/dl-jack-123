@@ -189,3 +189,18 @@ br {
     color: #2b2b2b;
     font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
 }
+
+.blinking-cursor-dark {
+    background-color: #2b2b2b;
+    animation: 0.65s blink-dark step-end infinite;
+}
+
+@keyframes blink-dark {
+    from,
+    to {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #2b2b2b;
+    }
+}

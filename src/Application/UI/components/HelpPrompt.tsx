@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import UIEventBus from '../EventBus';
 
-const HELP_TEXT = 'Click anywhere to begin';
+const HELP_TEXT = '點擊任意處探索';
 
 type HelpPromptProps = {};
 
@@ -52,10 +52,11 @@ const HelpPrompt: React.FC<HelpPromptProps> = () => {
             variants={vars}
             animate={visible ? 'visible' : 'hide'}
             style={styles.container}
+            className="info-light"
         >
             <p>{helpText}</p>
             <div style={styles.blinkingContainer}>
-                <div className="blinking-cursor" />
+                <div className="blinking-cursor blinking-cursor-dark" />
             </div>
         </motion.div>
     ) : (
@@ -81,7 +82,8 @@ const styles: StyleSheetCSS = {
     container: {
         position: 'absolute',
         bottom: 64,
-        background: 'black',
+        background: 'rgba(255, 255, 255, 0.85)',
+        borderRadius: 4,
         padding: 4,
         paddingLeft: 16,
         paddingRight: 16,
