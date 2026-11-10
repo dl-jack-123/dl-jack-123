@@ -420,7 +420,7 @@
 
 ![AI Code Time](http://img.shields.io/badge/AI%20Code%20Time-15%20hrs%2031%20mins-blue?style=flat)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-16-blue?style=flat)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-6-blue?style=flat)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-559.51%20thousand%20lines%20of%20code-blue?style=flat)
 
@@ -428,7 +428,7 @@
 
 > 📦 329.8 kB Used in GitHub's Storage 
  > 
-> 🏆 1,248 Contributions in the Year 2026
+> 🏆 1,252 Contributions in the Year 2026
  > 
 > 🚫 Not Opted to Hire
  > 
@@ -439,16 +439,16 @@
 **I'm a Night 🦉** 
 
 ```text
-🌞 Morning                2737 commits        █████░░░░░░░░░░░░░░░░░░░░   18.69 % 
-🌆 Daytime                2325 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.88 % 
-🌃 Evening                8396 commits        ██████████████░░░░░░░░░░░   57.33 % 
-🌙 Night                  1186 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   08.10 % 
+🌞 Morning                2738 commits        █████░░░░░░░░░░░░░░░░░░░░   18.69 % 
+🌆 Daytime                2326 commits        ████░░░░░░░░░░░░░░░░░░░░░   15.88 % 
+🌃 Evening                8397 commits        ██████████████░░░░░░░░░░░   57.33 % 
+🌙 Night                  1187 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   08.10 % 
 ```
 📅 **I'm Most Productive on Monday** 
 
 ```text
-Monday                   3070 commits        █████░░░░░░░░░░░░░░░░░░░░   20.96 % 
-Tuesday                  2566 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.52 % 
+Monday                   3073 commits        █████░░░░░░░░░░░░░░░░░░░░   20.98 % 
+Tuesday                  2567 commits        ████░░░░░░░░░░░░░░░░░░░░░   17.52 % 
 Wednesday                1891 commits        ███░░░░░░░░░░░░░░░░░░░░░░   12.91 % 
 Thursday                 1736 commits        ███░░░░░░░░░░░░░░░░░░░░░░   11.85 % 
 Friday                   1085 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.41 % 
@@ -463,13 +463,17 @@ Sunday                   2421 commits        ████░░░░░░░�
 🕑︎ Time Zone: Asia/Taipei
 
 💬 Programming Languages: 
-No Activity Tracked This Week
+Bash                     5 mins              ████████████████░░░░░░░░░   62.48 % 
+Python                   3 mins              █████████░░░░░░░░░░░░░░░░   36.47 % 
+textmate                 0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.92 % 
+.env file                0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.07 % 
+Docker                   0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 % 
 
 🔥 Editors: 
-No Activity Tracked This Week
+PyCharm                  8 mins              █████████████████████████   100.00 % 
 
 💻 Operating System: 
-No Activity Tracked This Week
+Windows                  8 mins              █████████████████████████   100.00 % 
 ```
 
 🤖 **AI Coding This Week** 
@@ -491,7 +495,7 @@ SCSS                     1 repo              █░░░░░░░░░░�
 
 
 
- Last Updated on 09/11/2026 00:04:37 UTC
+ Last Updated on 10/11/2026 00:05:02 UTC
 <!--END_SECTION:waka-->
 
 <br>
